@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "node server.js",
+    "start": "node server.js",
     "serve": "node server.js"
   },
   "keywords": [

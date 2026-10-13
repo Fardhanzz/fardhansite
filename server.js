@@ -26,20 +26,41 @@ const server = http.createServer((req, res) => {
   if (reqUrl === '' || reqUrl === '/') reqUrl = '/index.html';
 
   const safePath = path.normalize(reqUrl).replace(/^(\.\.[\/\\])+/, '').replace(/^[\\\/]+/, '');
-  let filePath = path.join(__dirname, safePath);
+  
+  // Cari file di beberapa kandidat lokasi (public, process.cwd(), atau __dirname)
+  const candidatePaths = [
+    path.join(process.cwd(), 'public', safePath),
+    path.join(process.cwd(), safePath),
+    path.join(__dirname, 'public', safePath),
+    path.join(__dirname, safePath)
+  ];
+
+  let filePath = candidatePaths.find(p => fs.existsSync(p)) || path.join(process.cwd(), safePath);
 
   // Jika mengarah ke direktori, arahkan ke index.html di dalamnya
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-    filePath = path.join(filePath, 'index.html');
+    const candidateIndex = [
+      path.join(filePath, 'index.html'),
+      path.join(process.cwd(), 'public', 'index.html'),
+      path.join(process.cwd(), 'index.html'),
+      path.join(__dirname, 'index.html')
+    ].find(p => fs.existsSync(p));
+    if (candidateIndex) filePath = candidateIndex;
   }
 
   // Jika tanpa ekstensi dan file tidak ada, coba tambahkan .html atau fallback ke index.html
   if (!fs.existsSync(filePath)) {
-    if (fs.existsSync(filePath + '.html')) {
-      filePath = filePath + '.html';
+    const htmlCandidate = candidatePaths.map(p => p + '.html').find(p => fs.existsSync(p));
+    if (htmlCandidate) {
+      filePath = htmlCandidate;
     } else if (!path.extname(filePath)) {
       // Fallback SPA routing ke index.html utama
-      filePath = path.join(__dirname, 'index.html');
+      filePath = [
+        path.join(process.cwd(), 'public', 'index.html'),
+        path.join(process.cwd(), 'index.html'),
+        path.join(__dirname, 'public', 'index.html'),
+        path.join(__dirname, 'index.html')
+      ].find(p => fs.existsSync(p)) || path.join(__dirname, 'index.html');
     }
   }
 
@@ -73,11 +94,15 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`☕ FardhanSite - Freelance Cafe & Eatery Specialist`);
-  console.log(`======================================================`);
-  console.log(`🚀 Dev Server siap diakses di:`);
-  console.log(`   👉 http://localhost:${PORT}/`);
-  console.log(`======================================================\n`);
-});
+module.exports = server;
+
+if (require.main === module || !process.env.VERCEL) {
+  server.listen(PORT, () => {
+    console.log(`\n======================================================`);
+    console.log(`☕ FardhanSite - Freelance Cafe & Eatery Specialist`);
+    console.log(`======================================================`);
+    console.log(`🚀 Dev Server siap diakses di:`);
+    console.log(`   👉 http://localhost:${PORT}/`);
+    console.log(`======================================================\n`);
+  });
+}
