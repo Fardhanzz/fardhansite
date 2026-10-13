@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
   let reqUrl = decodeURI(req.url.split('?')[0]);
   if (reqUrl === '' || reqUrl === '/') reqUrl = '/index.html';
 
-  const safePath = path.normalize(reqUrl).replace(/^(\.\.[\/\\])+/, '');
+  const safePath = path.normalize(reqUrl).replace(/^(\.\.[\/\\])+/, '').replace(/^[\\\/]+/, '');
   let filePath = path.join(__dirname, safePath);
 
   // Jika mengarah ke direktori, arahkan ke index.html di dalamnya
