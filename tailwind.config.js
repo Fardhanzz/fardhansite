@@ -74,18 +74,18 @@ module.exports = {
         "margin-desktop": "5rem"
       },
       fontFamily: {
-        "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
-        "body-lg": ["Plus Jakarta Sans", "sans-serif"],
-        "body-md": ["Plus Jakarta Sans", "sans-serif"],
-        "metric-num": ["Plus Jakarta Sans", "sans-serif"],
-        "display-hero-mobile": ["Plus Jakarta Sans", "sans-serif"],
-        "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
-        "label-md": ["Plus Jakarta Sans", "sans-serif"],
-        "label-lg": ["Plus Jakarta Sans", "sans-serif"],
-        "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
-        "body-sm": ["Plus Jakarta Sans", "sans-serif"],
-        "headline-md": ["Plus Jakarta Sans", "sans-serif"],
-        "display-hero": ["Plus Jakarta Sans", "sans-serif"]
+        "headline-lg": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "body-lg": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "body-md": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "metric-num": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "display-hero-mobile": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "headline-lg-mobile": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "label-md": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "label-lg": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "headline-sm": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "body-sm": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "headline-md": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"],
+        "display-hero": ["Plus Jakarta Sans", "system-ui", "-apple-system", "sans-serif"]
       },
       fontSize: {
         "headline-lg": ["44px", { lineHeight: "52px", letterSpacing: "-0.02em", fontWeight: "700" }],
