@@ -9,17 +9,15 @@ function optimizeHtmlFile(filePath) {
   const isCrlf = rawContent.includes('\r\n');
   let content = rawContent.replace(/\r\n/g, '\n');
 
-  // Regex to match anything between preconnect and </head>
-  const headPattern = /<!-- Preconnect to Font Origins for Faster First Paint -->[\s\S]*?<\/head>/;
+  // 1. Replace the entire font/stylesheet loading in <head>
+  // From after apple-touch-icon down to </head>
+  const headPattern = /<!-- Preconnect[\s\S]*?<\/head>/;
 
-  const newHeadContent = `<!-- Preconnect to Font Origins for Faster First Paint -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  const newHeadContent = `<!-- Preconnect & Preload Primary Font for Instant Paint (Zero Render-Blocking) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2" as="font" type="font/woff2" crossorigin/>
 
-  <!-- Fonts & Google Icons: Combined in 1 Single Optimized Request with display=swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet"/>
-
-  <!-- Pre-compiled Production CSS: Inlined for Zero Network Delay & Instant First Paint -->
+  <!-- Pre-compiled Production CSS with Inlined @font-face: Zero Network Delay & Instant First Paint -->
   <style id="app-styles">
 ${minifiedCss}
   </style>
@@ -32,7 +30,17 @@ ${minifiedCss}
 
   content = content.replace(headPattern, newHeadContent);
 
-  // Ensure cv-auto on offscreen sections
+  // 2. Switch all icon images from .png to .webp for Next-Gen Image optimization
+  content = content.replace('src="assets/images/logo.png" alt="F.Site Logo"', 'src="assets/images/logo.webp" alt="F.Site Logo"');
+  content = content.replace('src="assets/images/google-antigravity.png"', 'src="assets/images/google-antigravity.webp"');
+  content = content.replace('src="assets/images/n8n.png"', 'src="assets/images/n8n.webp"');
+  content = content.replace('src="assets/images/claude.png"', 'src="assets/images/claude.webp"');
+  content = content.replace('src="assets/images/gemini.png"', 'src="assets/images/gemini.webp"');
+  content = content.replace('src="assets/images/whatsapp.png"', 'src="assets/images/whatsapp.webp"');
+  // Also check footer logo:
+  content = content.replace('src="assets/images/logo.png" alt="F.Site Logo" width="32"', 'src="assets/images/logo.webp" alt="F.Site Logo" width="32"');
+
+  // 3. Ensure cv-auto on offscreen sections
   const sectionsToOptimize = [
     ['<section class="w-full bg-[#121316] text-[#F3F4F6] py-space-section relative" id="tentang">', '<section class="w-full bg-[#121316] text-[#F3F4F6] py-space-section relative cv-auto" id="tentang">'],
     ['<section class="w-full bg-surface py-space-section relative" id="kelebihan">', '<section class="w-full bg-surface py-space-section relative cv-auto" id="kelebihan">'],
