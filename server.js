@@ -22,16 +22,33 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  let reqPath = decodeURI(req.url.split('?')[0]);
-  if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
+  let reqUrl = decodeURI(req.url.split('?')[0]);
+  if (reqUrl === '' || reqUrl === '/') reqUrl = '/index.html';
 
-  const safePath = path.normalize(reqPath).replace(/^(\.\.[\/\\])+/, '');
-  const filePath = path.join(__dirname, safePath);
+  const safePath = path.normalize(reqUrl).replace(/^(\.\.[\/\\])+/, '');
+  let filePath = path.join(__dirname, safePath);
+
+  // Jika mengarah ke direktori, arahkan ke index.html di dalamnya
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  }
+
+  // Jika tanpa ekstensi dan file tidak ada, coba tambahkan .html atau fallback ke index.html
+  if (!fs.existsSync(filePath)) {
+    if (fs.existsSync(filePath + '.html')) {
+      filePath = filePath + '.html';
+    } else if (!path.extname(filePath)) {
+      // Fallback SPA routing ke index.html utama
+      filePath = path.join(__dirname, 'index.html');
+    }
+  }
+
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
+      console.warn(`[404 Not Found] ${req.url} -> ${filePath}`);
       if (err.code === 'ENOENT') {
         res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
         res.end(`
@@ -40,6 +57,7 @@ const server = http.createServer((req, res) => {
             <head><title>404 Not Found</title></head>
             <body style="font-family: sans-serif; text-align: center; padding: 50px;">
               <h1>404 - Halaman Tidak Ditemukan</h1>
+              <p>Path yang diminta: <code>${req.url}</code></p>
               <p><a href="/">Kembali ke Beranda FardhanSite</a></p>
             </body>
           </html>
