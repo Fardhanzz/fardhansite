@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #faf9fd;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8c4d8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5843e4;
+}
+
+/* Modal Animation */
+.modal-backdrop {
+  transition: opacity 0.25s ease-in-out;
+}
+.modal-content {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.hidden {
+  display: none;
+  opacity: 0;
+}
+.modal-backdrop:not(.hidden) {
+  display: flex;
+  opacity: 1;
+}
+
+/* Toast styles */
+#toast-notification {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}

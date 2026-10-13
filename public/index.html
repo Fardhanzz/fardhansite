@@ -8,172 +8,16 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
   <link rel="apple-touch-icon" href="assets/images/logo.png"/>
   
-  <!-- Fonts & Google Icons -->
+  <!-- Preconnect to Font Origins for Faster First Paint -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+  <!-- Fonts & Google Icons (with display=swap) -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet"/>
 
-  <style>
-    @layer base {
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        overscroll-behavior: none;
-      }
-      main > :first-child {
-        margin-top: 0 !important;
-      }
-      main > :last-child {
-        margin-bottom: 0 !important;
-      }
-    }
-    /* Smooth custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #faf9fd;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #c8c4d8;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #5843e4;
-    }
-
-    /* Modal Animation */
-    .modal-backdrop {
-      transition: opacity 0.25s ease-in-out;
-    }
-    .modal-content {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .modal-backdrop.hidden {
-      display: none;
-      opacity: 0;
-    }
-    .modal-backdrop:not(.hidden) {
-      display: flex;
-      opacity: 1;
-    }
-    
-    /* Toast styles */
-    #toast-notification {
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    }
-  </style>
-
-  <!-- Tailwind CDN & Exact Design Tokens from Google Stitch -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "error-container": "#ffdad6",
-            "on-background": "#1b1b1f",
-            "on-error": "#ffffff",
-            "tertiary-fixed-dim": "#4ae176",
-            "surface-dim": "#dbd9dd",
-            "surface-tint": "#5641e2",
-            "surface-container-lowest": "#ffffff",
-            "secondary": "#775a00",
-            "tertiary-container": "#007030",
-            "on-secondary": "#ffffff",
-            "outline-variant": "#c8c4d8",
-            "surface-container-high": "#e9e7ec",
-            "secondary-container": "#fdcb4a",
-            "surface-container-low": "#f5f3f7",
-            "surface-container-highest": "#e3e2e6",
-            "surface-container": "#efedf1",
-            "on-tertiary": "#ffffff",
-            "on-primary-fixed": "#160066",
-            "primary-container": "#5843e4",
-            "error": "#ba1a1a",
-            "on-tertiary-fixed": "#002109",
-            "on-secondary-fixed-variant": "#5a4300",
-            "outline": "#787587",
-            "on-surface": "#1b1b1f",
-            "secondary-fixed-dim": "#f1c03f",
-            "on-secondary-fixed": "#251a00",
-            "surface": "#faf9fd",
-            "on-primary": "#ffffff",
-            "inverse-on-surface": "#f2f0f4",
-            "primary": "#3f21cc",
-            "background": "#faf9fd",
-            "tertiary": "#005523",
-            "on-secondary-container": "#715600",
-            "primary-fixed": "#e4dfff",
-            "surface-variant": "#e3e2e6",
-            "on-tertiary-fixed-variant": "#005321",
-            "on-surface-variant": "#474555",
-            "tertiary-fixed": "#6bff8f",
-            "inverse-surface": "#2f3034",
-            "inverse-primary": "#c6bfff",
-            "secondary-fixed": "#ffdf98",
-            "primary-fixed-dim": "#c6bfff",
-            "on-primary-container": "#dcd7ff",
-            "surface-bright": "#faf9fd",
-            "on-primary-fixed-variant": "#3d1ecb",
-            "on-error-container": "#93000a",
-            "on-tertiary-container": "#63f889"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-md": "1rem",
-            "space-xl": "2.5rem",
-            "space-section": "6.5rem",
-            "margin": "1.25rem",
-            "space-xs": "0.25rem",
-            "gutter": "1.5rem",
-            "margin-tablet": "2.5rem",
-            "gutter-desktop": "2.5rem",
-            "space-lg": "1.5rem",
-            "space-sm": "0.5rem",
-            "space-2xl": "4rem",
-            "margin-desktop": "5rem"
-          },
-          "fontFamily": {
-            "headline-lg": ["Plus Jakarta Sans"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"],
-            "metric-num": ["Plus Jakarta Sans"],
-            "display-hero-mobile": ["Plus Jakarta Sans"],
-            "headline-lg-mobile": ["Plus Jakarta Sans"],
-            "label-md": ["Plus Jakarta Sans"],
-            "label-lg": ["Plus Jakarta Sans"],
-            "headline-sm": ["Plus Jakarta Sans"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "headline-md": ["Plus Jakarta Sans"],
-            "display-hero": ["Plus Jakarta Sans"]
-          },
-          "fontSize": {
-            "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
-            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
-            "metric-num": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-            "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-            "headline-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
-            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
-            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
-            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-            "display-hero": ["64px", { "lineHeight": "76px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
-          }
-        }
-      }
-    };
-  </script>
+  <!-- Pre-compiled Minified Production CSS (High Performance, 0ms TBT) -->
+  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 
 <body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white">
@@ -185,7 +29,7 @@
       <!-- Brand Logo -->
       <div class="flex items-center gap-space-sm">
         <a class="flex items-center gap-space-xs text-on-surface group" data-path="landing-page" href="#">
-          <img src="assets/images/logo.png" alt="F.Site Logo" class="w-10 h-10 rounded-xl object-contain shadow-sm group-hover:scale-105 transition-transform"/>
+          <img src="assets/images/logo.png" alt="F.Site Logo" width="40" height="40" class="w-10 h-10 rounded-xl object-contain shadow-sm group-hover:scale-105 transition-transform"/>
           <div class="flex flex-col leading-none">
             <span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">F.Site<span class="text-primary">.</span></span>
             <span class="font-label-md text-label-md text-on-surface-variant">FardhanSite</span>
@@ -311,7 +155,7 @@
             
             <!-- 1. Google Antigravity -->
             <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
-              <img src="assets/images/google-antigravity.png" alt="Google Antigravity" class="w-8 h-8 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <img src="assets/images/google-antigravity.png" alt="Google Antigravity" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
               <span>Google Antigravity</span>
             </div>
 
@@ -328,19 +172,19 @@
 
             <!-- 3. n8n Automation -->
             <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
-              <img src="assets/images/n8n.png" alt="n8n Logo" class="h-7 w-auto max-w-[38px] object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <img src="assets/images/n8n.png" alt="n8n Logo" width="38" height="28" loading="lazy" decoding="async" class="h-7 w-auto max-w-[38px] object-contain shrink-0 group-hover:scale-110 transition-transform"/>
               <span>n8n</span>
             </div>
 
             <!-- 4. Claude AI -->
             <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
-              <img src="assets/images/claude.png" alt="Claude AI Logo" class="w-7 h-7 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <img src="assets/images/claude.png" alt="Claude AI Logo" width="28" height="28" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
               <span>Claude</span>
             </div>
 
             <!-- 5. Google Gemini -->
             <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
-              <img src="assets/images/gemini.png" alt="Google Gemini Logo" class="w-7 h-7 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <img src="assets/images/gemini.png" alt="Google Gemini Logo" width="28" height="28" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
               <span>Gemini</span>
             </div>
 
@@ -736,7 +580,7 @@
         <!-- Left: Brand info -->
         <div class="md:col-span-5 flex flex-col gap-space-sm">
           <div class="flex items-center gap-space-xs">
-            <img src="assets/images/logo.png" alt="F.Site Logo" class="w-8 h-8 rounded-lg object-contain shadow-sm"/>
+            <img src="assets/images/logo.png" alt="F.Site Logo" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 rounded-lg object-contain shadow-sm"/>
             <span class="font-headline-md text-headline-md text-on-surface font-bold">F.Site<span class="text-primary">.</span></span>
           </div>
           <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
@@ -801,7 +645,7 @@
       <span class="absolute top-0.5 right-0.5 w-3.5 h-3.5 bg-[#25D366] rounded-full animate-ping opacity-75"></span>
 
       <!-- WhatsApp Logo Image -->
-      <img src="assets/images/whatsapp.png" alt="WhatsApp" class="w-9 h-9 object-contain group-hover:rotate-6 transition-transform duration-300"/>
+      <img src="assets/images/whatsapp.png" alt="WhatsApp" width="36" height="36" loading="lazy" decoding="async" class="w-9 h-9 object-contain group-hover:rotate-6 transition-transform duration-300"/>
 
       <!-- Tooltip on Hover -->
       <span class="absolute right-full mr-3.5 bg-[#121316] text-white font-label-md text-label-md px-3.5 py-1.5 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none translate-x-2 group-hover:translate-x-0">

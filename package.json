@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "node server.js",
+    "build:css": "tailwindcss@3 -i src/input.css -o public/assets/css/styles.css --minify",
     "start": "node server.js",
     "serve": "node server.js"
   },
