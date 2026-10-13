@@ -5,7 +5,6 @@
   "main": "index.html",
   "scripts": {
     "dev": "node server.js",
-    "build": "echo 'Static build ready'",
     "serve": "node server.js"
   },
   "keywords": [
