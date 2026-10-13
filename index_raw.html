@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#ffdad6", "on-background": "#1b1b1f", "on-error": "#ffffff", "tertiary-fixed-dim": "#4ae176", "surface-dim": "#dbd9dd", "surface-tint": "#5641e2", "surface-container-lowest": "#ffffff", "secondary": "#775a00", "tertiary-container": "#007030", "on-secondary": "#ffffff", "outline-variant": "#c8c4d8", "surface-container-high": "#e9e7ec", "secondary-container": "#fdcb4a", "surface-container-low": "#f5f3f7", "surface-container-highest": "#e3e2e6", "surface-container": "#efedf1", "on-tertiary": "#ffffff", "on-primary-fixed": "#160066", "primary-container": "#5843e4", "error": "#ba1a1a", "on-tertiary-fixed": "#002109", "on-secondary-fixed-variant": "#5a4300", "outline": "#787587", "on-surface": "#1b1b1f", "secondary-fixed-dim": "#f1c03f", "on-secondary-fixed": "#251a00", "surface": "#faf9fd", "on-primary": "#ffffff", "inverse-on-surface": "#f2f0f4", "primary": "#3f21cc", "background": "#faf9fd", "tertiary": "#005523", "on-secondary-container": "#715600", "primary-fixed": "#e4dfff", "surface-variant": "#e3e2e6", "on-tertiary-fixed-variant": "#005321", "on-surface-variant": "#474555", "tertiary-fixed": "#6bff8f", "inverse-surface": "#2f3034", "inverse-primary": "#c6bfff", "secondary-fixed": "#ffdf98", "primary-fixed-dim": "#c6bfff", "on-primary-container": "#dcd7ff", "surface-bright": "#faf9fd", "on-primary-fixed-variant": "#3d1ecb", "on-error-container": "#93000a", "on-tertiary-container": "#63f889" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-xl": "2.5rem", "space-section": "6.5rem", "margin": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "margin-tablet": "2.5rem", "gutter-desktop": "2.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-2xl": "4rem", "margin-desktop": "5rem" }, "fontFamily": { "headline-lg": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "metric-num": [ "Plus Jakarta Sans" ], "display-hero-mobile": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "display-hero": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "30px", "fontWeight": "400" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "metric-num": [ "48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "display-hero-mobile": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "label-lg": [ "15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display-hero": [ "64px", { "lineHeight": "76px", "letterSpacing": "-0.03em", "fontWeight": "800" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs text-on-surface group" data-path="landing-page" href="#"><div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-extrabold tracking-tighter">RW</div><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">Rafi<span class="text-primary">.</span></span><span class="font-label-md text-label-md text-on-surface-variant">Rafiwpsite</span></div></a></div><nav class="hidden md:flex items-center gap-space-xs bg-surface-container-low/70 px-space-xs py-space-xs rounded-full" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-full"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-path="tentang" href="#tentang">Tentang</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-path="kelebihan" href="#kelebihan">Kelebihan</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-path="harga" href="#harga">Harga</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-path="testimoni" href="#testimoni">Testimoni</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-path="portofolio" href="#portofolio">Portofolio</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-all duration-200 shadow-[0_12px_24px_-4px_rgba(88,67,228,0.28)] hover:-translate-y-0.5" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span>Konsultasi Gratis</span><span class="material-symbols-outlined text-[18px]">arrow_outward</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-200px)]"><div class="flex flex-col w-full relative overflow-x-hidden">
+<!-- HERO SECTION (MATCHING JAMES ROSS HERO STYLE: Playful wireframes, Yellow backdrop blob, floating pills) -->
+<section class="relative w-full max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl md:py-space-2xl min-h-[640px] flex items-center">
+<!-- Background Fine Decorative Curved Lines -->
+<svg class="absolute -left-20 top-4 w-[520px] h-[520px] pointer-events-none text-secondary-container/40 z-0" fill="none" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="160" cy="200" r="180" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5"></circle>
+<circle cx="200" cy="240" r="210" stroke="currentColor" stroke-width="1.2"></circle>
+<path d="M40 380 Q 200 120 380 340" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+</svg>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center w-full relative z-10">
+<!-- Left Column: Typography & CTAs -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-space-md">
+<!-- Freelancer Badge & Greeting -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high text-on-surface text-label-md font-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span>Freelancer Website Travel Specialist</span>
+</div>
+<!-- Hero Title with Hand-drawn Aesthetic Overlay -->
+<div class="relative pt-space-xs">
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight leading-none">
+            Hi, <br/>
+            I am <span class="text-primary-container relative inline-block">
+              Rafi
+              <!-- Subtle Organic Hand-Drawn Scribble Underline -->
+<svg class="absolute -bottom-3 left-0 w-full h-4 text-secondary-container" fill="none" viewbox="0 0 160 18" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 14C45 4 110 5 156 12C118 7 60 9 12 16" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</span>
+</h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl pt-space-xs">
+          Membantu bisnis travel memiliki website profesional yang modern, cepat, dan mudah dikelola tanpa ribet coding. Dibuat dengan WordPress &amp; Elementor agar Anda bisa update konten paket wisata kapan saja.
+        </p>
+<!-- CTA Row -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-md">
+<a class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-space-xl py-space-md rounded-full shadow-[0_12px_24px_-4px_rgba(88,67,228,0.28)] transition-all duration-300 hover:-translate-y-1 group" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20saya%20tertarik%20sama%20jasa%20website%20nya%20yaa" rel="noopener noreferrer" target="_blank">
+<span>Konsultasi Gratis</span>
+<div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:rotate-45">
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</div>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-md rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg shadow-sm transition-all duration-200" href="#harga">
+<span>Lihat Paket Harga</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">arrow_downward</span>
+</a>
+</div>
+<!-- Social Proof Micro Badge -->
+<div class="flex items-center gap-space-sm pt-space-sm">
+<div class="flex -space-x-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-xs shadow-sm">★</span>
+<span class="w-8 h-8 rounded-full bg-tertiary-fixed-dim flex items-center justify-center font-bold text-on-tertiary-fixed text-xs shadow-sm">★</span>
+<span class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed text-xs shadow-sm">★</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">125+ Tour &amp; Travel Owner mempercayakan websitenya</span>
+</div>
+</div>
+<!-- Right Column: Asymmetric Composition with Mustard Blob & Floating Badges -->
+<div class="lg:col-span-5 relative flex justify-center items-center mt-space-xl lg:mt-0">
+<!-- Big Sunny Organic Backdrop Blob (matching screenshot 6 yellow shape) -->
+<div class="absolute w-[360px] sm:w-[440px] h-[360px] sm:h-[440px] bg-secondary-container rounded-[42%_58%_70%_30%/45%_45%_55%_55%] -rotate-6 transform transition-transform duration-700 hover:rotate-3 pointer-events-none"></div>
+<!-- Concentric Wireline Arc -->
+<svg class="absolute -right-10 top-0 w-72 h-72 text-outline-variant pointer-events-none" fill="none" viewbox="0 0 200 200">
+<path d="M 20,180 A 80,80 0 0,1 180,20" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1"></path>
+<path d="M 50,190 A 60,60 0 0,1 190,50" stroke="currentColor" stroke-width="1.2"></path>
+</svg>
+<!-- Main Portrait Image -->
+<div class="relative z-10 w-[290px] sm:w-[350px] h-[390px] sm:h-[460px] flex items-end justify-center">
+<img class="w-full h-full object-cover object-top rounded-b-[40px] shadow-2xl filter drop-shadow-md" data-alt="Editorial crisp studio portrait of Rafi, a confident friendly Indonesian creative web designer in a clean black turtleneck with artistic lighting, studio grey backdrop, modern minimalism style inspired by Dribbble design leaders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChi5Ir0hcn9yKgLuPxgYY3IkZOa5suC-K19azGQGCUFpeW0-j5wNT_GCmbL6RZlqjFZ-n_uCDc7JijQZ-YYM8mbgdMq1LhKLpINIwsKQspFZHDX9aJMFBHPYIjxSvnm6pc0xdL2vQMS6sqmg6nvKz9Nf7Hzevl1N612FACqfXwduRRehZ_C0TmDYT7zX_D6kskynL0cxb0fbQPYEIhEsiKP076KbSlhrYkLd5wXc6322LoDcHiWZxEbg"/>
+</div>
+<!-- Floating Skill Badge 1: Top Left WordPress Icon -->
+<div class="absolute -top-4 -left-6 z-20 bg-surface-container-lowest p-space-sm rounded-xl shadow-[0_14px_34px_-6px_rgba(18,19,22,0.12)] flex items-center gap-space-xs transition-transform duration-300 hover:scale-105">
+<div class="w-10 h-10 rounded-lg bg-[#21759B]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#21759B]">laptop_mac</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">WordPress &amp; Elementor</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Specialist</span>
+</div>
+</div>
+<!-- Floating Skill Badge 2: Right Experience Pill -->
+<div class="absolute right-[-24px] top-1/4 z-20 bg-surface-container-lowest px-space-md py-space-sm rounded-2xl shadow-[0_14px_34px_-6px_rgba(18,19,22,0.14)] flex flex-col transition-transform duration-300 hover:scale-105">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container inline-block"></span>
+<span class="font-label-md text-label-md text-on-surface font-extrabold">UI &amp; Web Architect</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-bold">5+ Tahun Pengalaman</span>
+</div>
+<!-- Floating Skill Badge 3: Bottom Left Certified Badge -->
+<div class="absolute -bottom-6 left-4 z-20 bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-[0_14px_34px_-6px_rgba(18,19,22,0.12)] flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">verified</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Google SEO &amp; Speed Ready</span>
+</div>
+<!-- Whimsical Dribbble Scribble Loop right side -->
+<svg class="absolute -right-12 bottom-12 w-20 h-24 text-on-surface pointer-events-none z-20 opacity-80" fill="none" viewbox="0 0 60 70">
+<path d="M12,12 C28,-2 46,20 28,34 C12,46 36,66 48,50" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<!-- Playful Mini Accent Ball (pink/magenta matching screenshot 6) -->
+<div class="absolute -bottom-4 right-6 w-9 h-9 rounded-full bg-[#f43f5e] shadow-lg flex items-center justify-center text-white z-20">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+</div>
+</div>
+</div>
+</section>
+<!-- LOGO STRIP / PLATFORM TRUST BAR (MATCHING SCREENSHOT 4) -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex flex-col items-center">
+<div class="relative text-center mb-space-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+          Platform &amp; Integrasi <span class="relative inline-block font-extrabold px-1">
+            Terpercaya
+            <!-- Hand-drawn Oval Loop encircling 'Terpercaya' (Screenshot 4 style) -->
+<svg class="absolute -inset-x-3 -inset-y-2 w-[calc(100%+24px)] h-[calc(100%+16px)] text-outline pointer-events-none opacity-60" fill="none" viewbox="0 0 140 44">
+<ellipse cx="70" cy="22" rx="66" ry="18" stroke="currentColor" stroke-dasharray="140 4" stroke-width="1.5" transform="rotate(-2 70 22)"></ellipse>
+<ellipse cx="68" cy="23" rx="64" ry="16" stroke="currentColor" stroke-width="1" transform="rotate(1 70 22)"></ellipse>
+</svg>
+</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Ditenagai stack teknologi paling andal untuk industri travel &amp; turisme modern</p>
+</div>
+<!-- Trust Logos with floating styling -->
+<div class="flex flex-wrap items-center justify-center gap-space-lg md:gap-space-2xl opacity-80">
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container text-[28px]">code</span>
+<span>WordPress</span>
+</div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[#D43763] text-[28px]">view_quilt</span>
+<span>Elementor</span>
+</div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-tertiary-container text-[28px]">search_check</span>
+<span>Google SEO</span>
+</div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-secondary text-[28px]">payments</span>
+<span>Midtrans</span>
+</div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[#00AF87] text-[28px]">map</span>
+<span>TripAdvisor</span>
+</div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[28px]">chat</span>
+<span>WA Gateway</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT & HIGH-CONTRAST VALUE PROP (MATCHING SCREENSHOT 5: Dark section with bold yellow metrics & 3 colorful cards) -->
+<section class="w-full bg-[#121316] text-[#F3F4F6] py-space-section relative" id="tentang">
+<!-- Decorative sketch float on dark -->
+<div class="absolute right-12 top-16 hidden md:block w-16 h-12 rotate-12 bg-white/10 rounded shadow-md pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<!-- Section Title & Bio -->
+<div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+<span class="font-label-md text-label-md text-secondary-fixed tracking-wider uppercase">Tentang Kami</span>
+<h2 class="font-headline-lg text-headline-lg text-white mt-space-xs">Kenapa Harus Rafiwpsite?</h2>
+<p class="font-body-lg text-body-lg text-gray-300 mt-space-md">
+          Kami spesialis membangun website menggunakan WordPress &amp; Elementor untuk kemudahan kelola konten Anda. Fokus kami ada di satu hal saja: membuat website travel yang benar-benar bekerja untuk bisnis Anda.
+        </p>
+<p class="font-body-md text-body-md text-gray-400 mt-space-xs">
+          Setiap website dirancang untuk menarik calon customer, mudah ditemukan di Google, dan tentunya bisa Anda kelola sendiri tanpa perlu skill coding. Tinggal klik, edit, dan publish. Semudah itu.
+        </p>
+</div>
+<!-- Highlight Stats Counters (Matching Screenshot 5 Yellow Metrics) -->
+<div class="flex flex-wrap items-center justify-center gap-space-2xl my-space-2xl">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-num text-metric-num text-secondary-container font-extrabold tracking-tight">125+</span>
+<div class="flex flex-col text-left pl-2">
+<span class="font-label-md text-label-md text-white font-bold leading-tight">Klien Puas</span>
+<span class="font-body-sm text-body-sm text-gray-400">Bisnis &amp; Turisme</span>
+</div>
+</div>
+<div class="w-px h-12 bg-white/10 hidden md:block"></div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-num text-metric-num text-secondary-container font-extrabold tracking-tight">5+</span>
+<div class="flex flex-col text-left pl-2">
+<span class="font-label-md text-label-md text-white font-bold leading-tight">Tahun Pengalaman</span>
+<span class="font-body-sm text-body-sm text-gray-400">WordPress Specialist</span>
+</div>
+</div>
+<div class="w-px h-12 bg-white/10 hidden md:block"></div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-num text-metric-num text-secondary-container font-extrabold tracking-tight">99%</span>
+<div class="flex flex-col text-left pl-2">
+<span class="font-label-md text-label-md text-white font-bold leading-tight">Uptime &amp; Fast</span>
+<span class="font-body-sm text-body-sm text-gray-400">Kecepatan Optimal</span>
+</div>
+</div>
+</div>
+<!-- Services I Offer / Feature Cards (Matching Screenshot 5: Lime Green, Cyan, Soft Violet cards) -->
+<div class="flex flex-col items-center mt-space-xl">
+<h3 class="font-headline-md text-headline-md text-white mb-space-lg">Layanan yang Kami Tawarkan</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop w-full">
+<!-- Card 1: Lime Green Box -->
+<div class="bg-[#CCFF00] text-[#121316] p-space-xl rounded-2xl flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300 hover:-translate-y-2">
+<div class="flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[32px] text-[#121316]">view_quilt</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold">Website Travel Custom</h4>
+<p class="font-body-md text-body-md text-[#121316]/80 mt-space-sm">
+                Desain eksklusif sesuai identitas brand travel Anda. Bukan template pasaran, responsif sempurna di HP, tablet, maupun laptop.
+              </p>
+</div>
+<div class="pt-space-md flex items-center justify-center">
+<span class="font-label-md text-label-md uppercase tracking-wider font-extrabold bg-black text-[#CCFF00] px-space-md py-1 rounded-full">Desain Unik</span>
+</div>
+</div>
+<!-- Card 2: Cyan / Mint Box -->
+<div class="bg-[#5CE1E6] text-[#121316] p-space-xl rounded-2xl flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300 hover:-translate-y-2">
+<div class="flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[32px] text-[#121316]">tune</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold">Mudah Dikelola Sendiri</h4>
+<p class="font-body-md text-body-md text-[#121316]/80 mt-space-sm">
+                Dibuat dengan WordPress &amp; Elementor. Anda bebas update destinasi, harga paket, atau promo kapan saja tanpa perlu paham coding.
+              </p>
+</div>
+<div class="pt-space-md flex items-center justify-center">
+<span class="font-label-md text-label-md uppercase tracking-wider font-extrabold bg-black text-[#5CE1E6] px-space-md py-1 rounded-full">Klik &amp; Publish</span>
+</div>
+</div>
+<!-- Card 3: Soft Purple / Violet Box -->
+<div class="bg-[#B9A2F8] text-[#121316] p-space-xl rounded-2xl flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300 hover:-translate-y-2">
+<div class="flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[32px] text-[#121316]">send_to_mobile</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold">SEO &amp; Booking WhatsApp</h4>
+<p class="font-body-md text-body-md text-[#121316]/80 mt-space-sm">
+                Teroptimasi SEO Google agar traveler mudah menemukan agen Anda. Dilengkapi tombol booking otomatis langsung ke chat admin.
+              </p>
+</div>
+<div class="pt-space-md flex items-center justify-center">
+<span class="font-label-md text-label-md uppercase tracking-wider font-extrabold bg-black text-[#B9A2F8] px-space-md py-1 rounded-full">Konversi Tinggi</span>
+</div>
+</div>
+</div>
+<!-- Action on Dark -->
+<div class="mt-space-2xl">
+<a class="inline-flex items-center gap-space-xs bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg px-space-xl py-space-md rounded-full shadow-lg transition-transform hover:-translate-y-1" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20saya%20tertarik%20sama%20jasa%20website%20nya%20yaa" rel="noopener noreferrer" target="_blank">
+<span>Ceritakan Kebutuhan Anda</span>
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- KELEBIHAN KAMI (4 KEY PILLARS) -->
+<section class="w-full bg-surface py-space-section relative" id="kelebihan">
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md">
+<div>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Kelebihan Kami</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Alasan Pemilik Travel Memilih Kami</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">
+            Kami paham dinamika bisnis travel. Setiap fitur dan desain dibuat khusus untuk membantu agen Anda mendapatkan lebih banyak booking tamu.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">flight_takeoff</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Spesialis Niche Wisata</span>
+</div>
+</div>
+<!-- Bento Grid for 4 Advantages -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed-dim/40 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[26px]">timer</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Proses Cepat &amp; Tepat</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Website travel Anda siap dalam hitungan hari, bukan minggu. Kami bekerja efisien tanpa mengorbankan kualitas estetika, sehingga bisnis Anda bisa lekas go online.
+            </p>
+</div>
+<div class="pt-space-md">
+<span class="font-label-md text-label-md text-primary font-semibold">Tepat Waktu →</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/50 flex items-center justify-center text-tertiary-container mb-space-md">
+<span class="material-symbols-outlined text-[26px]">security</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Aman &amp; Terpercaya</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Setiap website dilengkapi SSL, proteksi berlapis, dan backup rutin. Data transaksi &amp; katalog paket tour terlindungi dengan baik sehingga Anda fokus jualan.
+            </p>
+</div>
+<div class="pt-space-md">
+<span class="font-label-md text-label-md text-tertiary-container font-semibold">Free SSL Terpasang →</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[26px]">travel_explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">SEO Friendly</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Website Anda dioptimasi agar mudah muncul di halaman pertama Google saat traveler mencari paket wisata. Dapatkan calon turis organik tanpa iklan mahal.
+            </p>
+</div>
+<div class="pt-space-md">
+<span class="font-label-md text-label-md text-secondary font-semibold">Struktur Standar Google →</span>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-error-container/60 flex items-center justify-center text-error mb-space-md">
+<span class="material-symbols-outlined text-[26px]">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Support Setelah Jadi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Kami tidak lepas tangan setelah project selesai. Dapatkan masa garansi bantuan teknis gratis bila ada pertanyaan, penyesuaian teks, maupun update foto paket.
+            </p>
+</div>
+<div class="pt-space-md">
+<span class="font-label-md text-label-md text-primary font-semibold">Bantuan Langsung WA →</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SHOWCASE / RECENT PROJECTS (MATCHING SCREENSHOT 3 & 4) -->
+<section class="w-full bg-surface-container-lowest py-space-section relative" id="portofolio">
+<!-- Pencil circle around 'Recent Project' -->
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="text-center mb-space-2xl">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Showcase Hasil Kerja</span>
+<div class="relative inline-block mt-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold">Recent Projects</h2>
+<!-- Organic Dribbble Pencil Circle -->
+<svg class="absolute -inset-x-8 -inset-y-3 w-[calc(100%+64px)] h-[calc(100%+24px)] text-outline pointer-events-none opacity-50" fill="none" viewbox="0 0 240 60">
+<path d="M12 30 C 20 8, 220 6, 230 28 C 238 48, 30 54, 8 32 C -4 18, 180 12, 225 36" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-space-md">
+          Lihat portofolio website tour &amp; travel terbaru dengan konversi tinggi, layout bersih, dan integrasi WhatsApp yang mudah.
+        </p>
+</div>
+<!-- Showcase Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Showcase Card 1 -->
+<div class="group flex flex-col bg-surface rounded-2xl p-space-sm shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-72 rounded-xl overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern UI mockup of a Bali Luxury Travel Agency website with clean typography, package cards, tropical imagery, booking CTA buttons, displayed on mobile and desktop screens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-B5b-67EpbpS177qknhpl688S80C1rzhRKxxTJ0Mbbe1r_wRz-99vOY_Pq8fT_k_skovp0f1cprEx-JMWY6Yxgs8g16QTtiZwSXN71uOINlKoVYJEiHP9ttbRdTV21svjvXuIqwTb2FrwBBCjn1mzkS1D64t-5wAuUgjdarQVTGkPHt6KpybB_hWpblHjKO1NTUv4Z-rJoyRecU6ZKYX4NKigzCbOzYAZwxqqcaCmLuuS6ecv3HySRA"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-space-sm py-1 rounded-full font-label-md text-label-md font-bold text-on-surface">
+              Tour &amp; Travel Bali
+            </div>
+</div>
+<div class="p-space-sm flex items-center justify-between mt-space-xs">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Nusantara Horizon Tour</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Katalog Wisata, Booking WA, Filter Paket</p>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary flex items-center justify-center transition-colors" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20mau%20lihat%20demo%20nusantara%20horizon" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Showcase Card 2 (Highlighted App/Web) -->
+<div class="group flex flex-col bg-surface rounded-2xl p-space-sm shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-72 rounded-xl overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sleek UI design showcase of an Open Trip Labuan Bajo agency website featuring high contrast dark cards, itinerary timeline, customer reviews, and instant WhatsApp booking trigger." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDhZXwx5Du9374TXTOMkGuNaVTCpKdiG4gq6MKFtD0uEzFdNzih-M6Q45nYwPU3079RrhM9Rob8e-40u434dkBcEW5evHSIl1kdRn7EGAfq1BQfyO0rpowVcHyVWIMJck2Aapxus8tUturXAe-PavVoKwUtQCa4zbu27O0uOCD-B31mGXf2M_zOXgYSM2E5p221S8ffKR7UnZ0tYoQRk23WpEEoT-Z1__iLU5JXz7-3i6ERf69WmCiAA"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-space-sm py-1 rounded-full font-label-md text-label-md font-bold text-on-surface">
+              Open Trip Specialist
+            </div>
+</div>
+<div class="p-space-sm flex items-center justify-between mt-space-xs">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Bajo Adventure Trip</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Galeri Phinisi, Jadwal Trip, Live Chat</p>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary flex items-center justify-center transition-colors" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20mau%20lihat%20demo%20bajo%20trip" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Showcase Card 3 -->
+<div class="group flex flex-col bg-surface rounded-2xl p-space-sm shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="w-full h-72 rounded-xl overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial website design for an Umroh &amp; Hajj Premium travel company with elegant gold and obsidian color accents, package comparison table, and interactive itinerary download." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz64pU36TLYZCR6pd7g3xr245goNV3WfozWvZC10iDgyZRpzkw_OLC5OkzhDJbvRbQsH5Mn748LXYLuksu6_tMvqXlSLkPH13uGAnUwmmg5joMJfWFcGyDEY5mihjQR2D7SGdux6ksbLMi71gXBrf0KVM1XbLNH__L-4ZNyhK8OYYKuhm60E4r5_hiXI3CG7CxDiByE0bhGijq_BThRU8KMRY9zy1EHaqPV6TniWa-x21StN4y3lnDew"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-space-sm py-1 rounded-full font-label-md text-label-md font-bold text-on-surface">
+              Umroh &amp; Wisata Religi
+            </div>
+</div>
+<div class="p-space-sm flex items-center justify-between mt-space-xs">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Barakah Haramain Tour</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparison Table, Download Brosur PDF</p>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary flex items-center justify-center transition-colors" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20mau%20lihat%20demo%20umroh" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PAKET HARGA (VERBATIM FROM RAFIWPSITE.XYZ CONTENT) -->
+<section class="w-full bg-surface-container-low py-space-section" id="harga">
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-2xl">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Paket Harga</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Pilih Paket yang Sesuai Kebutuhan Anda</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+          Semua paket sudah termasuk domain, hosting, dan support. Tanpa biaya tersembunyi, harga sudah final.
+        </p>
+</div>
+<!-- Pricing Cards 3-Tier Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop items-stretch">
+<!-- TIER 1: Paket Starter -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface-variant uppercase tracking-wider">Paket Starter</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Cocok untuk Anda yang ingin punya landing page dengan copywriting menjual (cocok untuk kebutuhan ads/iklan).
+            </p>
+<div class="my-space-lg flex items-baseline gap-1">
+<span class="font-display-hero text-[40px] font-extrabold text-on-surface tracking-tight">Rp1.5jt</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ paket all-in</span>
+</div>
+<div class="h-px w-full bg-surface-container-high my-space-md"></div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 1-2 Halaman Responsif</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Include Hosting 1 Tahun</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Copywriting Menjual</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Integrasi Google Maps</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Tombol CTWA / WhatsApp</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Formulir Kontak / Email</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Domain 1 Tahun (.com, .id, dll)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi SEO Basic</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free SSL / Keamanan</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Mobile Friendly</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gratis Revisi Minor (Kecil)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi Caching &amp; Lazy Load</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 4x Revisi Mayor (Besar)</li>
+</ul>
+</div>
+<div class="pt-space-xl">
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg py-space-sm rounded-full transition-colors" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20saya%20tertarik%20sama%20Paket%20Starter%201.5jt" rel="noopener noreferrer" target="_blank">
+<span>Pilih Paket Ini</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- TIER 2: Paket Populer (HIGHLIGHTED WITH VIOLET GLOW / PILL BADGE) -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col justify-between shadow-[0_20px_40px_-15px_rgba(88,67,228,0.25)] relative transform lg:-translate-y-4">
+<!-- Paling Populer Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary font-label-md text-label-md font-bold px-space-md py-1 rounded-full shadow-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span>Paling Populer</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-primary uppercase tracking-wider">Paket Populer</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Paling populer! Ideal untuk bisnis travel yang ingin tampil profesional dengan katalog halaman yang lebih lengkap.
+            </p>
+<div class="my-space-lg flex items-baseline gap-1">
+<span class="font-display-hero text-[40px] font-extrabold text-primary-container tracking-tight">Rp3jt</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ paket all-in</span>
+</div>
+<div class="h-px w-full bg-primary-fixed my-space-md"></div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> Tampilan Modern – Tamu Auto Trust</li>
+<li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> 4-5 Halaman Utama</li>
+<li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> Sistem Booking WA Otomatis</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Include Hosting 1 Tahun</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Copywriting</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gallery Paket Wisata</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Integrasi Google Maps &amp; Kontak</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Desain Visual Lebih Kompleks (CTA, Form, Galeri)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Domain 1 Tahun (.com / .id)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> SSL &amp; Keamanan Premium</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gratis Revisi Minor Bebas</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 6x Revisi Mayor (Besar)</li>
+<li class="flex items-center gap-space-xs font-semibold text-tertiary-container"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Garansi Maintenance 1 Bulan</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi Kecepatan Khusus</li>
+</ul>
+</div>
+<div class="pt-space-xl">
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg py-space-sm rounded-full shadow-lg transition-transform hover:-translate-y-0.5" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20saya%20tertarik%20sama%20Paket%20Populer%203jt" rel="noopener noreferrer" target="_blank">
+<span>Pilih Paket Populer</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- TIER 3: Paket Professional -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface-variant uppercase tracking-wider">Paket Professional</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Solusi untuk agen travel yang gak mau repot urus proses booking tamu dengan integrasi payment online.
+            </p>
+<div class="my-space-lg flex items-baseline gap-1">
+<span class="font-display-hero text-[40px] font-extrabold text-on-surface tracking-tight">Rp5jt</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ paket all-in</span>
+</div>
+<div class="h-px w-full bg-surface-container-high my-space-md"></div>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-space-xs font-semibold"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Sistem Booking &amp; Payment Gateway</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 5–7 Halaman Utama (Home, About, Tour, Gallery, Blog, Testi, Kontak)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Fokus Pada Trust &amp; Branding Eksekutif</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Include Hosting 1 Tahun &amp; Free Domain</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Tombol WhatsApp &amp; Integrasi Maps</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Full SEO Optimization</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> SSL &amp; Keamanan Premium Berlapis</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gratis Revisi Minor Sepuasnya</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 6x Revisi Mayor (Besar)</li>
+<li class="flex items-center gap-space-xs font-semibold text-tertiary-container"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Garansi Maintenance 1 Bulan</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi Kecepatan Ekstra Maksimal</li>
+</ul>
+</div>
+<div class="pt-space-xl">
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg py-space-sm rounded-full transition-colors" href="https://wa.me/6285773267402?text=halo%20kaa%2C%20saya%20tertarik%20sama%20Paket%20Professional%205jt" rel="noopener noreferrer" target="_blank">
+<span>Pilih Paket Pro</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS (MATCHING SCREENSHOT 2: Minimalist card with bold quote, photo in yellow box & navigation arrows) -->
+<section class="w-full bg-surface py-space-section relative overflow-hidden" id="testimoni">
+<!-- Curved thin lines in background -->
+<svg class="absolute -left-24 bottom-10 w-96 h-96 text-outline-variant/60 pointer-events-none" fill="none" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1.2"></circle>
+<path d="M10 100 Q 100 20 190 100" stroke="currentColor" stroke-width="1.2"></path>
+</svg>
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="text-center mb-space-2xl">
+<div class="relative inline-block">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold">What Client Say</h2>
+<!-- Pencil circle loop around 'What Client Say' -->
+<svg class="absolute -inset-x-6 -inset-y-3 w-[calc(100%+48px)] h-[calc(100%+24px)] text-outline pointer-events-none opacity-50" fill="none" viewbox="0 0 240 60">
+<ellipse cx="120" cy="30" rx="112" ry="24" stroke="currentColor" stroke-dasharray="160 8" stroke-width="1.5" transform="rotate(-1 120 30)"></ellipse>
+</svg>
+</div>
+</div>
+<!-- Testimonial Showcase Card with Client Cutout on Yellow Box (Matching screenshot 2) -->
+<div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center bg-surface-container-lowest p-space-lg md:p-space-2xl rounded-2xl shadow-sm">
+<!-- Left Side: Quote Box -->
+<div class="md:col-span-7 flex flex-col justify-between">
+<div>
+<div class="font-serif text-display-hero text-on-surface leading-none mb-space-xs select-none opacity-90">“”</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed" id="testimonial-quote">
+              “Pelayanan Mas Rafi sangat responsif dan desain website travel kami benar-benar kelihatan eksklusif seperti agen internasional. Minggu pertama setelah tayang, pesanan trip Labuan Bajo lewat WhatsApp naik lebih dari 40%!”
+            </p>
+</div>
+<div class="mt-space-xl flex items-center justify-between pt-space-md">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="testimonial-author">Arya Pratama</h4>
+<p class="font-body-sm text-body-sm text-primary font-semibold" id="testimonial-role">Founder, Pesona Flores Tour</p>
+</div>
+<!-- Arrows Pagination -->
+<div class="flex items-center gap-space-xs">
+<button class="w-11 h-11 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface flex items-center justify-center transition-colors" id="prev-testi">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<button class="w-11 h-11 rounded-full bg-primary-container hover:bg-primary text-on-primary flex items-center justify-center transition-colors shadow-md" id="next-testi">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Side: Client Avatar with Yellow Backdrop Accent Box -->
+<div class="md:col-span-5 flex justify-center relative">
+<!-- Yellow Accent Box (matching screenshot 2) -->
+<div class="w-64 h-64 sm:w-72 sm:h-72 bg-secondary-container rounded-2xl relative flex items-center justify-center overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Studio portrait photograph of an Indonesian travel entrepreneur founder, smiling confidently with arms crossed, casual modern polo shirt, clean lighting." id="testimonial-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4YmK343pvb-CZS4yCVQnNBdgDcnEnm6ACMGNMYf-YVnVKbj685DT1m71TmLHkOB4muemSDIodc4H55YDDpYdGEL7969DEGhN0izot5-w-pCHqy_MKLSKM3t2eHGo5V-uFf-JM9wapPzkcgjUU_zLt_C8QyRADcLqce5k_02-0qi3ylYKrgGZNPNIWMwLLdf3xKxOAOuAHVDplrah4AzEU6jelPd-c7acofn23zdL8fBVVBhkxSkPz-w"/>
+<!-- Sketch doodle accent inside card -->
+<svg class="absolute top-3 right-3 w-8 h-8 text-on-surface opacity-40 pointer-events-none" fill="none" viewbox="0 0 30 30">
+<path d="M5 25 C15 5 25 25 20 10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA / GET IN TOUCH BANNER (MATCHING SCREENSHOT 1: "Let's make something amazing" with inline input) -->
+<section class="w-full bg-surface py-space-section relative">
+<!-- Background Fine Decorative Curved Lines -->
+<svg class="absolute -right-20 top-0 w-80 h-96 text-secondary-container pointer-events-none opacity-50" fill="none" viewbox="0 0 200 300">
+<path d="M 180,0 Q 50,150 160,300" stroke="currentColor" stroke-width="1.8"></path>
+</svg>
+<div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+<!-- Header with Organic Pencil Loop (Screenshot 1) -->
+<div class="relative">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+            Let’s make <span class="relative inline-block px-1">
+              something amazing
+              <svg class="absolute -inset-x-4 -inset-y-2 w-[calc(100%+32px)] h-[calc(100%+16px)] text-outline pointer-events-none opacity-60" fill="none" viewbox="0 0 260 50">
+<ellipse cx="130" cy="25" rx="124" ry="20" stroke="currentColor" stroke-dasharray="240 6" stroke-width="1.5" transform="rotate(-1 130 25)"></ellipse>
+<ellipse cx="128" cy="26" rx="120" ry="18" stroke="currentColor" stroke-width="1" transform="rotate(1 130 25)"></ellipse>
+</svg>
+</span>
+</h2>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold mt-space-sm underline decoration-outline-variant decoration-2">
+          Write to me
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-space-xs">
+          Jangan tunggu kompetitor lebih dulu. Konsultasikan kebutuhan website travel Anda sekarang, gratis dan tanpa komitmen.
+        </p>
+<!-- Consultation Input Bar (Matching Screenshot 1) -->
+<form class="w-full max-w-2xl mt-space-xl flex flex-col sm:flex-row items-center gap-space-xs bg-surface-container-lowest p-space-xs rounded-2xl sm:rounded-full shadow-lg" id="contact-form">
+<div class="flex items-center flex-1 w-full px-space-md py-space-xs">
+<span class="material-symbols-outlined text-outline-variant mr-space-xs">edit_note</span>
+<input class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-outline-variant" id="user-message" placeholder="Tulis nama bisnis travel atau pesan Anda..." required="" type="text"/>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-[#121316] hover:bg-black text-white font-label-lg text-label-lg px-space-xl py-space-sm rounded-full transition-transform hover:scale-105 shadow-md" type="submit">
+<span>Get a quote</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+<!-- Response Speed Reassurance -->
+<div class="mt-space-md inline-flex items-center gap-2 px-space-md py-1 rounded-full bg-tertiary-fixed-dim/30 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">bolt</span>
+<span>Balas chat biasanya kurang dari 5 menit</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Smooth WhatsApp Submission & Testimonial Carousel -->
+<script>
+    (function() {
+      // Contact Form Redirect to WhatsApp with Custom Message
+      const contactForm = document.getElementById('contact-form');
+      const userMessage = document.getElementById('user-message');
+      if (contactForm && userMessage) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const query = encodeURIComponent(userMessage.value.trim() || 'halo kaa, saya tertarik sama jasa website travel nya yaa');
+          window.open(`https://wa.me/6285773267402?text=${query}`, '_blank');
+        });
+      }
+
+      // Simple Testimonial Switcher
+      const testimonials = [
+        {
+          quote: "Pelayanan Mas Rafi sangat responsif dan desain website travel kami benar-benar kelihatan eksklusif seperti agen internasional. Minggu pertama setelah tayang, pesanan trip Labuan Bajo lewat WhatsApp naik lebih dari 40%!",
+          author: "Arya Pratama",
+          role: "Founder, Pesona Flores Tour"
+        },
+        {
+          quote: "Dulu kelola web travel rumit sekali harus bayar programmer terus. Sekarang dengan WordPress dan Elementor buatan Rafi, admin kami tinggal upload paket wisata baru sendiri. Praktis dan super cepat!",
+          author: "Dian Novitasari",
+          role: "Managing Director, Borneo EcoTrip"
+        },
+        {
+          quote: "Website-nya dioptimasi dengan sangat baik. Di Google pencarian 'Paket Wisata Bromo Sunrise' langsung nangkring di page 1 tanpa harus boros iklan harian. Recommended banget!",
+          author: "Rendra Kusuma",
+          role: "Owner, Java Heritage Travel"
+        }
+      ];
+
+      let currentIdx = 0;
+      const quoteEl = document.getElementById('testimonial-quote');
+      const authorEl = document.getElementById('testimonial-author');
+      const roleEl = document.getElementById('testimonial-role');
+      const prevBtn = document.getElementById('prev-testi');
+      const nextBtn = document.getElementById('next-testi');
+
+      function updateTesti(idx) {
+        if (!quoteEl || !authorEl || !roleEl) return;
+        quoteEl.style.opacity = '0';
+        setTimeout(() => {
+          quoteEl.innerHTML = `&ldquo;${testimonials[idx].quote}&rdquo;`;
+          authorEl.textContent = testimonials[idx].author;
+          roleEl.textContent = testimonials[idx].role;
+          quoteEl.style.opacity = '1';
+        }, 150);
+      }
+
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentIdx = (currentIdx - 1 + testimonials.length) % testimonials.length;
+          updateTesti(currentIdx);
+        });
+        nextBtn.addEventListener('click', () => {
+          currentIdx = (currentIdx + 1) % testimonials.length;
+          updateTesti(currentIdx);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start"><div class="md:col-span-5 flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-extrabold">RW</div><span class="font-headline-md text-headline-md text-on-surface">Rafi<span class="text-primary">.</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Freelance Web Designer &amp; WordPress Strategist. Membantu bisnis dan kreator membangun website berkonversi tinggi dengan visual modern ala agency.</p><div class="pt-space-xs"><a class="inline-flex items-center gap-space-xs bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg px-space-md py-space-sm rounded-full transition-all duration-200" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat</span><span>WhatsApp: Hubungi Kami</span></a></div></div><div class="md:col-span-3 flex flex-col gap-space-xs"><h4 class="font-label-lg text-label-lg text-on-surface font-bold">Navigasi Cepat</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li class="py-0.5"><a class="hover:text-on-surface transition-colors" href="#tentang">Tentang Rafi</a></li><li class="py-0.5"><a class="hover:text-on-surface transition-colors" href="#kelebihan">Kelebihan Layanan</a></li><li class="py-0.5"><a class="hover:text-on-surface transition-colors" href="#harga">Paket &amp; Harga</a></li><li class="py-0.5"><a class="hover:text-on-surface transition-colors" href="#testimoni">Review Klien</a></li><li class="py-0.5"><a class="hover:text-on-surface transition-colors" href="#portofolio">Showcase Hasil Kerja</a></li></ul></div><div class="md:col-span-4 flex flex-col gap-space-xs"><h4 class="font-label-lg text-label-lg text-on-surface font-bold">Jadwalkan Diskusi</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Punya project website, redesign landing page, atau migrasi WordPress? Mari diskusikan kebutuhan brand Anda.</p><div class="mt-space-xs p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold">Status Ketersediaan</span><span class="font-body-sm text-body-sm text-tertiary-container flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container inline-block"></span>Menerima Project Baru</span></div><a class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center transition-transform hover:scale-105" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">send</span></a></div></div></div><div class="mt-space-xl pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-md text-label-md text-on-surface-variant"><p>© 2024 Rafiwpsite (Rafi). Hak cipta dilindungi undang-undang.</p><div class="flex items-center gap-space-md"><span>Dirancang dengan standar Neocraft</span><span>Dribbble Showcase Style</span></div></div></div></footer></body></html>

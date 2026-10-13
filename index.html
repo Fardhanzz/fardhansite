@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>F.Site | Freelance Cafe and Eatery Website Specialist</title>
+  <meta name="description" content="Spesialis pembuatan website Cafe, Coffee Shop, Resto, dan Eatery profesional berbasis Google Antigravity dan Google Stitch. Ditenagai n8n, Claude, dan Gemini dengan desain aesthetic, katalog menu QR digital, dan sistem reservasi meja."/>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+  <link rel="apple-touch-icon" href="assets/images/logo.png"/>
+  
+  <!-- Fonts & Google Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    /* Smooth custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #faf9fd;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c8c4d8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5843e4;
+    }
+
+    /* Modal Animation */
+    .modal-backdrop {
+      transition: opacity 0.25s ease-in-out;
+    }
+    .modal-content {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-backdrop.hidden {
+      display: none;
+      opacity: 0;
+    }
+    .modal-backdrop:not(.hidden) {
+      display: flex;
+      opacity: 1;
+    }
+    
+    /* Toast styles */
+    #toast-notification {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+  </style>
+
+  <!-- Tailwind CDN & Exact Design Tokens from Google Stitch -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-background": "#1b1b1f",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#4ae176",
+            "surface-dim": "#dbd9dd",
+            "surface-tint": "#5641e2",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#775a00",
+            "tertiary-container": "#007030",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c8c4d8",
+            "surface-container-high": "#e9e7ec",
+            "secondary-container": "#fdcb4a",
+            "surface-container-low": "#f5f3f7",
+            "surface-container-highest": "#e3e2e6",
+            "surface-container": "#efedf1",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#160066",
+            "primary-container": "#5843e4",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#002109",
+            "on-secondary-fixed-variant": "#5a4300",
+            "outline": "#787587",
+            "on-surface": "#1b1b1f",
+            "secondary-fixed-dim": "#f1c03f",
+            "on-secondary-fixed": "#251a00",
+            "surface": "#faf9fd",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#f2f0f4",
+            "primary": "#3f21cc",
+            "background": "#faf9fd",
+            "tertiary": "#005523",
+            "on-secondary-container": "#715600",
+            "primary-fixed": "#e4dfff",
+            "surface-variant": "#e3e2e6",
+            "on-tertiary-fixed-variant": "#005321",
+            "on-surface-variant": "#474555",
+            "tertiary-fixed": "#6bff8f",
+            "inverse-surface": "#2f3034",
+            "inverse-primary": "#c6bfff",
+            "secondary-fixed": "#ffdf98",
+            "primary-fixed-dim": "#c6bfff",
+            "on-primary-container": "#dcd7ff",
+            "surface-bright": "#faf9fd",
+            "on-primary-fixed-variant": "#3d1ecb",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#63f889"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-section": "6.5rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "margin-tablet": "2.5rem",
+            "gutter-desktop": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "margin-desktop": "5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "metric-num": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "metric-num": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero": ["64px", { "lineHeight": "76px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white">
+
+  <!-- HEADER NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-space-sm">
+        <a class="flex items-center gap-space-xs text-on-surface group" data-path="landing-page" href="#">
+          <img src="assets/images/logo.png" alt="F.Site Logo" class="w-10 h-10 rounded-xl object-contain shadow-sm group-hover:scale-105 transition-transform"/>
+          <div class="flex flex-col leading-none">
+            <span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">F.Site<span class="text-primary">.</span></span>
+            <span class="font-label-md text-label-md text-on-surface-variant">FardhanSite</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-space-xs bg-surface-container-low/70 px-space-xs py-space-xs rounded-full" id="desktop-nav">
+        <a class="nav-link px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-section="tentang" href="#tentang">Tentang</a>
+        <a class="nav-link px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-section="kelebihan" href="#kelebihan">Kelebihan</a>
+        <a class="nav-link px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200" data-section="harga" href="#harga">Harga</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-space-sm">
+        <a class="hidden sm:inline-flex items-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-all duration-200 shadow-[0_12px_24px_-4px_rgba(88,67,228,0.28)] hover:-translate-y-0.5" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20ingin%20konsultasi%20pembuatan%20website%20cafe%20dan%20eatery" rel="noopener noreferrer" target="_blank" id="header-cta-btn">
+          <span>Konsultasi Gratis</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+        </a>
+        
+        <a href="#tentang" title="Tentang Mas Fardhan" class="w-8 h-8 rounded-full bg-primary hover:bg-primary-container flex items-center justify-center transition-colors">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" aria-label="Toggle Menu" class="md:hidden w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-[22px]" id="mobile-menu-icon">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/30 bg-surface/95 backdrop-blur-xl px-margin py-space-md">
+      <div class="flex flex-col gap-space-xs max-w-[1280px] mx-auto">
+        <a class="mobile-nav-link px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#tentang">Tentang</a>
+        <a class="mobile-nav-link px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#kelebihan">Kelebihan</a>
+        <a class="mobile-nav-link px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#harga">Harga</a>
+        <div class="pt-space-sm border-t border-outline-variant/20 mt-space-xs">
+          <a class="w-full inline-flex items-center justify-center gap-space-xs bg-primary text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full shadow-md" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20ingin%20konsultasi%20pembuatan%20website%20cafe%20dan%20eatery" rel="noopener noreferrer" target="_blank">
+            <span>Konsultasi Gratis di WhatsApp</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-200px)]">
+    <div class="flex flex-col w-full relative overflow-x-hidden">
+
+      <!-- HERO SECTION -->
+      <section class="relative w-full max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop pt-space-md md:pt-space-lg pb-space-xl flex flex-col items-center justify-start" id="hero">
+        <!-- Background Fine Decorative Curved Lines -->
+        <svg class="absolute -left-20 top-4 w-[520px] h-[520px] pointer-events-none text-secondary-container/40 z-0" fill="none" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="160" cy="200" r="180" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5"></circle>
+          <circle cx="200" cy="240" r="210" stroke="currentColor" stroke-width="1.2"></circle>
+          <path d="M40 380 Q 200 120 380 340" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+        </svg>
+
+        <div class="flex flex-col items-center justify-center text-center max-w-4xl mx-auto w-full relative z-10 pt-space-xs pb-space-sm">
+          <!-- Freelancer Badge & Greeting -->
+          <div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high text-on-surface text-label-md font-label-md mb-space-xs">
+            <span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+            <span>Freelance Cafe &amp; Eatery Specialist</span>
+          </div>
+
+          <!-- Hero Title with Hand-drawn Aesthetic Overlay -->
+          <div class="relative pt-space-xs mb-space-xs">
+            <h1 class="font-display-hero text-display-hero text-on-surface tracking-tight leading-tight">
+              Hi, <br/>
+              I am <span class="text-primary-container relative inline-block">
+                Fardhan
+                <!-- Subtle Organic Hand-Drawn Scribble Underline -->
+                <svg class="absolute -bottom-3 left-0 w-full h-4 text-secondary-container" fill="none" viewbox="0 0 160 18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 14C45 4 110 5 156 12C118 7 60 9 12 16" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+                </svg>
+              </span>
+            </h1>
+          </div>
+
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl pt-space-xs mx-auto">
+            Membantu bisnis cafe, coffee shop, resto, dan eatery memiliki website profesional yang aesthetic, cepat, dan modern dengan teknologi Google Antigravity &amp; Google Stitch. Dilengkapi menu digital QR code dan integrasi reservasi meja agar omset kuliner Anda makin melejit.
+          </p>
+
+          <!-- CTA Row -->
+          <div class="flex flex-wrap items-center justify-center gap-space-md pt-space-lg">
+            <a class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg px-space-xl py-space-md rounded-full shadow-[0_12px_24px_-4px_rgba(88,67,228,0.28)] transition-all duration-300 hover:-translate-y-1 group" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20sama%20jasa%20website%20cafe%20dan%20eatery%20nya" rel="noopener noreferrer" target="_blank" id="hero-consult-btn">
+              <span>Konsultasi Gratis</span>
+              <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:rotate-45">
+                <span class="material-symbols-outlined text-[18px]">north_east</span>
+              </div>
+            </a>
+            <a class="inline-flex items-center gap-space-xs px-space-lg py-space-md rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg shadow-sm transition-all duration-200" href="#harga" id="hero-pricing-btn">
+              <span>Lihat Paket Harga</span>
+              <span class="material-symbols-outlined text-[20px] text-on-surface-variant">arrow_downward</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOGO STRIP / PLATFORM TRUST BAR -->
+      <section class="w-full bg-surface-container-low py-space-xl">
+        <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex flex-col items-center">
+          <div class="relative text-center mb-space-lg">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+              Platform &amp; Integrasi <span class="relative inline-block font-extrabold px-1">
+                Terpercaya
+                <!-- Hand-drawn Oval Loop encircling 'Terpercaya' -->
+                <svg class="absolute -inset-x-3 -inset-y-2 w-[calc(100%+24px)] h-[calc(100%+16px)] text-outline pointer-events-none opacity-60" fill="none" viewbox="0 0 140 44">
+                  <ellipse cx="70" cy="22" rx="66" ry="18" stroke="currentColor" stroke-dasharray="140 4" stroke-width="1.5" transform="rotate(-2 70 22)"></ellipse>
+                  <ellipse cx="68" cy="23" rx="64" ry="16" stroke="currentColor" stroke-width="1" transform="rotate(1 70 22)"></ellipse>
+                </svg>
+              </span>
+            </h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Ditenagai stack teknologi paling andal untuk industri cafe, resto &amp; kuliner modern</p>
+          </div>
+          
+          <!-- Trust Logos with crisp icons on the left -->
+          <div class="flex flex-wrap items-center justify-center gap-x-space-xl gap-y-space-md max-w-5xl">
+            
+            <!-- 1. Google Antigravity -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <img src="assets/images/google-antigravity.png" alt="Google Antigravity" class="w-8 h-8 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <span>Google Antigravity</span>
+            </div>
+
+            <!-- 2. Google Stitch -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <svg class="w-7 h-7 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7C4 4.5 6 3 9 3H15C18 3 20 4.5 20 7C20 9.5 18 11 15 11H9" stroke="#4285F4" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 2"/>
+                <path d="M9 11H15C18 11 20 12.5 20 15C20 17.5 18 19 15 19H9C6 19 4 17.5 4 15C4 12.5 6 11 9 11Z" stroke="#EA4335" stroke-width="2.4" stroke-linecap="round"/>
+                <circle cx="15" cy="7" r="1.8" fill="#FBBC05"/>
+                <circle cx="9" cy="15" r="1.8" fill="#34A853"/>
+              </svg>
+              <span>Google Stitch</span>
+            </div>
+
+            <!-- 3. n8n Automation -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <img src="assets/images/n8n.png" alt="n8n Logo" class="h-7 w-auto max-w-[38px] object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <span>n8n</span>
+            </div>
+
+            <!-- 4. Claude AI -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <img src="assets/images/claude.png" alt="Claude AI Logo" class="w-7 h-7 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <span>Claude</span>
+            </div>
+
+            <!-- 5. Google Gemini -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <img src="assets/images/gemini.png" alt="Google Gemini Logo" class="w-7 h-7 object-contain shrink-0 group-hover:scale-110 transition-transform"/>
+              <span>Gemini</span>
+            </div>
+
+            <!-- 6. Menu Digital QR -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <span class="material-symbols-outlined text-tertiary-container text-[26px] shrink-0 group-hover:scale-110 transition-transform">qr_code_2</span>
+              <span>Menu Digital QR</span>
+            </div>
+
+            <!-- 7. WA Reservasi -->
+            <div class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-bold text-on-surface hover:text-primary transition-all duration-200 cursor-default group">
+              <span class="material-symbols-outlined text-[#25D366] text-[26px] shrink-0 group-hover:scale-110 transition-transform">chat</span>
+              <span>WA Reservasi</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT & VALUE PROP SECTION -->
+      <section class="w-full bg-[#121316] text-[#F3F4F6] py-space-section relative" id="tentang">
+        <div class="absolute right-12 top-16 hidden md:block w-16 h-12 rotate-12 bg-white/10 rounded shadow-md pointer-events-none"></div>
+        <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+          
+          <!-- Section Title & Bio -->
+          <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+            <span class="font-label-md text-label-md text-secondary-fixed tracking-wider uppercase font-semibold">Tentang Kami</span>
+            <h2 class="font-headline-lg text-headline-lg text-white mt-space-xs">Kenapa Harus FardhanSite?</h2>
+            <p class="font-body-lg text-body-lg text-gray-300 mt-space-md">
+              Kami spesialis membangun website kuliner modern menggunakan Google Antigravity &amp; Google Stitch untuk kemudahan kelola menu dan promo Anda. Fokus kami ada di satu hal: membuat website cafe dan eatery yang benar-benar memikat selera pengunjung dan meningkatkan reservasi meja.
+            </p>
+            <p class="font-body-md text-body-md text-gray-400 mt-space-xs">
+              Setiap website dirancang untuk menampilkan vibe tempat Anda secara visual, mudah ditemukan di Google saat orang mencari tempat nongkrong atau makan, dan tentunya bisa Anda kelola sendiri tanpa perlu skill coding. Tinggal klik, ganti harga/menu, dan publish.
+            </p>
+          </div>
+
+
+          <!-- Services I Offer / Feature Cards -->
+          <div class="flex flex-col items-center mt-space-xl">
+            <h3 class="font-headline-md text-headline-md text-white mb-space-lg">Layanan yang Kami Tawarkan</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop w-full">
+              <!-- Card 1: Lime Green Box -->
+              <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20mau%20tanya%20layanan%20Website%20Cafe%20dan%20Eatery%20Custom" target="_blank" rel="noopener noreferrer" class="service-card group bg-[#CCFF00] text-[#121316] p-space-xl rounded-2xl flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[32px] text-[#121316]">storefront</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm font-bold">Website Cafe &amp; Resto Custom</h4>
+                  <p class="font-body-md text-body-md text-[#121316]/80 mt-space-sm">
+                    Desain aesthetic sesuai interior dan ambience cafe Anda. Bukan template pasaran, responsif sempurna di smartphone pengunjung maupun laptop.
+                  </p>
+                </div>
+                <div class="pt-space-md flex items-center justify-center">
+                  <span class="font-label-md text-label-md uppercase tracking-wider font-extrabold bg-black text-[#CCFF00] px-space-md py-1 rounded-full group-hover:bg-[#121316]/90 transition-colors">Desain Aesthetic →</span>
+                </div>
+              </a>
+
+              <!-- Card 2: Cyan / Mint Box -->
+              <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20mau%20tanya%20fitur%20Katalog%20Menu%20Digital%20menggunakan%20Google%20Antigravity%20dan%20Stitch" target="_blank" rel="noopener noreferrer" class="service-card group bg-[#5CE1E6] text-[#121316] p-space-xl rounded-2xl flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[32px] text-[#121316]">restaurant_menu</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm font-bold">Katalog Menu Digital &amp; QR</h4>
+                  <p class="font-body-md text-body-md text-[#121316]/80 mt-space-sm">
+                    Dibuat dengan Google Antigravity &amp; Google Stitch. Tamu bisa scan QR di meja untuk melihat daftar menu makanan &amp; minuman favorit lengkap dengan foto menggugah selera dan harga yang mudah Anda update.
+                  </p>
+                </div>
+                <div class="pt-space-md flex items-center justify-center">
+                  <span class="font-label-md text-label-md uppercase tracking-wider font-extrabold bg-black text-[#5CE1E6] px-space-md py-1 rounded-full group-hover:bg-[#121316]/90 transition-colors">Scan &amp; Pesan →</span>
+                </div>
+              </a>
+
+              <!-- Card 3: Soft Purple / Violet Box -->
+              <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20fitur%20Reservasi%20Meja%20dan%20Order%20WhatsApp" target="_blank" rel="noopener noreferrer" class="service-card group bg-[#B9A2F8] text-[#121316] p-space-xl rounded-2xl flex flex-col justify-between min-h-[340px] shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 rounded-xl bg-black/10 flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[32px] text-[#121316]">event_seat</span>
+                  </div>
+                  <h4 class="font-headline-sm text-headline-sm font-bold">Reservasi Meja &amp; Order WA</h4>
+                  <p class="font-body-md text-body-md text-[#121316]/80 mt-space-sm">
+                    Dilengkapi tombol booking meja otomatis, reservasi event / gathering, serta order online langsung terhubung ke WhatsApp kasir atau admin cafe.
+                  </p>
+                </div>
+                <div class="pt-space-md flex items-center justify-center">
+                  <span class="font-label-md text-label-md uppercase tracking-wider font-extrabold bg-black text-[#B9A2F8] px-space-md py-1 rounded-full group-hover:bg-[#121316]/90 transition-colors">Booking Cepat →</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Action on Dark -->
+            <div class="mt-space-2xl">
+              <a class="inline-flex items-center gap-space-xs bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg px-space-xl py-space-md rounded-full shadow-lg transition-transform hover:-translate-y-1" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20sama%20jasa%20website%20cafe%20dan%20eatery%20nya" rel="noopener noreferrer" target="_blank">
+                <span>Ceritakan Kebutuhan Cafe Anda</span>
+                <span class="material-symbols-outlined text-[20px]">chat</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KELEBIHAN KAMI (4 PILLARS) -->
+      <section class="w-full bg-surface py-space-section relative" id="kelebihan">
+        <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md">
+            <div>
+              <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Kelebihan Kami</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Alasan Pemilik Cafe Memilih Kami</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">
+                Kami paham dinamika bisnis F&amp;B kuliner. Setiap fitur dan desain dibuat khusus untuk menonjolkan kelezatan sajian dan memudahkan pelanggan datang ke cafe Anda.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[24px]">coffee</span>
+              </div>
+              <span class="font-label-lg text-label-lg font-bold text-on-surface">Spesialis Cafe &amp; Eatery</span>
+            </div>
+          </div>
+
+          <!-- Bento Grid for 4 Advantages -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <!-- Pillar 1 -->
+            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20mau%20konsultasi%20pembuatan%20website%20cafe%20proses%20cepat" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary-fixed-dim/40 flex items-center justify-center text-primary mb-space-md group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[26px]">timer</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Proses Cepat &amp; Tepat</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                  Website cafe Anda siap dalam hitungan hari, bukan minggu. Siap dipasang di bio Instagram &amp; TikTok promosi sehingga pelanggan bisa langsung melihat menu.
+                </p>
+              </div>
+              <div class="pt-space-md">
+                <span class="font-label-md text-label-md text-primary font-semibold group-hover:underline">Tepat Waktu →</span>
+              </div>
+            </a>
+
+            <!-- Pillar 2 -->
+            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20apakah%20websitenya%20sudah%20termasuk%20keamanan%20SSL%20dan%20sistem%20QR%20Menu%3F" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-tertiary-fixed/50 flex items-center justify-center text-tertiary-container mb-space-md group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[26px]">security</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Aman &amp; Terpercaya</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                  Dilengkapi SSL premium, proteksi keamanan, dan integrasi pembayaran QRIS/Midtrans yang aman untuk booking meja dengan DP atau pemesanan catering.
+                </p>
+              </div>
+              <div class="pt-space-md">
+                <span class="font-label-md text-label-md text-tertiary-container font-semibold group-hover:underline">Free SSL Terpasang →</span>
+              </div>
+            </a>
+
+            <!-- Pillar 3 -->
+            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20ingin%20tahu%20optimasi%20Local%20SEO%20dan%20Google%20Maps%20untuk%20cafe%20saya" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-space-md group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[26px]">location_on</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Local SEO &amp; Maps</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                  Optimasi Google Maps dan Local SEO agar cafe Anda berada di ranking atas saat calon pengunjung mencari "cafe hits terdekat" atau "coffee shop cozy".
+                </p>
+              </div>
+              <div class="pt-space-md">
+                <span class="font-label-md text-label-md text-secondary font-semibold group-hover:underline">Struktur Standar Google →</span>
+              </div>
+            </a>
+
+            <!-- Pillar 4 -->
+            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20bagaimana%20mekanisme%20garansi%20dan%20support%20update%20menu%20cafe%3F" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-error-container/60 flex items-center justify-center text-error mb-space-md group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[26px]">support_agent</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Support &amp; Update Menu</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                  Kami dampingi Anda setelah website tayang. Dapatkan panduan praktis dan garansi teknis bila ingin update harga menu, promo diskon, atau menu seasonal baru.
+                </p>
+              </div>
+              <div class="pt-space-md">
+                <span class="font-label-md text-label-md text-primary font-semibold group-hover:underline">Bantuan Langsung WA →</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- PAKET HARGA -->
+      <section class="w-full bg-surface-container-low py-space-section" id="harga">
+        <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Paket Harga</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Pilih Paket Sesuai Kebutuhan Bisnis Cafe Anda</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+              Semua paket sudah termasuk domain, hosting, dan support. Tanpa biaya tersembunyi, harga sudah final all-in.
+            </p>
+          </div>
+
+          <!-- Pricing Cards 3-Tier Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop items-stretch">
+            
+            <!-- TIER 1: Paket Starter Cafe -->
+            <div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg font-bold text-on-surface-variant uppercase tracking-wider">Paket Starter Cafe</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Cocok untuk Kedai Kopi / Cafe baru yang butuh landing page profil aesthetic + katalog menu ringkas + Google Maps.
+                </p>
+                <div class="my-space-lg flex items-baseline gap-1">
+                  <span class="font-display-hero text-[40px] font-extrabold text-on-surface tracking-tight">Rp1.5jt</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">/ paket all-in</span>
+                </div>
+                <div class="h-px w-full bg-surface-container-high my-space-md"></div>
+                <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 1-2 Halaman Responsif</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Include Hosting 1 Tahun</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Copywriting Menarik</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Integrasi Google Maps &amp; Lokasi</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Tombol Chat &amp; Tanya Menu WA</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Formulir Kontak &amp; Jam Buka</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Domain 1 Tahun (.com, .id)</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi SEO Basic Local</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free SSL / Keamanan Website</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Mobile Friendly Cepat</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gratis Revisi Minor Bebas</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi Caching &amp; Foto Makanan</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 4x Revisi Mayor (Besar)</li>
+                </ul>
+              </div>
+              <div class="pt-space-xl">
+                <a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg py-space-sm rounded-full transition-all duration-200 hover:-translate-y-0.5" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20pesan%20Paket%20Starter%20Cafe%20(Rp1.5jt)" rel="noopener noreferrer" target="_blank">
+                  <span>Pilih Paket Ini</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- TIER 2: Paket Populer Eatery -->
+            <div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col justify-between shadow-[0_20px_40px_-15px_rgba(88,67,228,0.25)] relative transform lg:-translate-y-4 border-2 border-primary-container">
+              <!-- Paling Populer Badge -->
+              <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary font-label-md text-label-md font-bold px-space-md py-1 rounded-full shadow-md flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">star</span>
+                <span>Paling Populer</span>
+              </div>
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg font-bold text-primary uppercase tracking-wider">Paket Populer Eatery</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Paling populer! Ideal untuk cafe &amp; eatery yang ingin tampil profesional dengan Menu Digital QR Code dan Reservasi Meja.
+                </p>
+                <div class="my-space-lg flex items-baseline gap-1">
+                  <span class="font-display-hero text-[40px] font-extrabold text-primary-container tracking-tight">Rp3jt</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">/ paket all-in</span>
+                </div>
+                <div class="h-px w-full bg-primary-fixed my-space-md"></div>
+                <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+                  <li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> Tampilan Aesthetic – Pelanggan Auto Trust</li>
+                  <li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> 4-5 Halaman Utama (Home, Menu, Vibe, Lokasi)</li>
+                  <li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> Fitur Menu Digital QR Code Meja</li>
+                  <li class="flex items-center gap-space-xs font-semibold text-primary"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> Sistem Reservasi Meja via WhatsApp</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Include Hosting 1 Tahun</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Copywriting Khusus F&amp;B</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Galeri Suasana &amp; Signature Dishes</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Integrasi Google Maps &amp; Rating</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Free Domain 1 Tahun (.com / .id)</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> SSL &amp; Keamanan Premium</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gratis Revisi Minor Sepuasnya</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 6x Revisi Mayor (Besar)</li>
+                  <li class="flex items-center gap-space-xs font-semibold text-tertiary-container"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Garansi Maintenance 1 Bulan</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi Loading Cepat Smartphone</li>
+                </ul>
+              </div>
+              <div class="pt-space-xl">
+                <a class="w-full inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg py-space-sm rounded-full shadow-lg transition-transform hover:-translate-y-0.5" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20pesan%20Paket%20Populer%20Eatery%20(Rp3jt)" rel="noopener noreferrer" target="_blank">
+                  <span>Pilih Paket Populer</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- TIER 3: Paket Professional Resto -->
+            <div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg font-bold text-on-surface-variant uppercase tracking-wider">Paket Professional Resto</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Solusi untuk Resto &amp; Cafe skala besar dengan integrasi online ordering, payment gateway QRIS, dan sistem reservasi event.
+                </p>
+                <div class="my-space-lg flex items-baseline gap-1">
+                  <span class="font-display-hero text-[40px] font-extrabold text-on-surface tracking-tight">Rp5jt</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">/ paket all-in</span>
+                </div>
+                <div class="h-px w-full bg-surface-container-high my-space-md"></div>
+                <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+                  <li class="flex items-center gap-space-xs font-semibold"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Sistem Reservasi &amp; Payment Gateway (QRIS/Transfer)</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 5–7 Halaman Utama (Home, Menu, Vibe, Event, Story, Kontak)</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Fitur Online Delivery Ordering / Pre-Order</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Include Hosting 1 Tahun &amp; Free Domain</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Multi-Branch / Cabang Maps Integration</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Full Local SEO Optimization (Ranking 1 Google)</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> SSL &amp; Keamanan Premium Berlapis</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Gratis Revisi Minor Sepuasnya</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> 6x Revisi Mayor (Besar)</li>
+                  <li class="flex items-center gap-space-xs font-semibold text-tertiary-container"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Garansi Maintenance 1 Bulan</li>
+                  <li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span> Optimasi Kecepatan Ekstra Maksimal</li>
+                </ul>
+              </div>
+              <div class="pt-space-xl">
+                <a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg py-space-sm rounded-full transition-all duration-200 hover:-translate-y-0.5" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20pesan%20Paket%20Professional%20Resto%20(Rp5jt)" rel="noopener noreferrer" target="_blank">
+                  <span>Pilih Paket Pro</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- CTA / GET IN TOUCH BANNER -->
+      <section class="w-full bg-surface py-space-section relative" id="kontak">
+        <!-- Background Fine Decorative Curved Lines -->
+        <svg class="absolute -right-20 top-0 w-80 h-96 text-secondary-container pointer-events-none opacity-50" fill="none" viewbox="0 0 200 300">
+          <path d="M 180,0 Q 50,150 160,300" stroke="currentColor" stroke-width="1.8"></path>
+        </svg>
+
+        <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+          <div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+            
+            <!-- Header with Organic Pencil Loop -->
+            <div class="relative">
+              <h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+                Let’s make <span class="relative inline-block px-1">
+                  something amazing
+                  <svg class="absolute -inset-x-4 -inset-y-2 w-[calc(100%+32px)] h-[calc(100%+16px)] text-outline pointer-events-none opacity-60" fill="none" viewbox="0 0 260 50">
+                    <ellipse cx="130" cy="25" rx="124" ry="20" stroke="currentColor" stroke-dasharray="240 6" stroke-width="1.5" transform="rotate(-1 130 25)"></ellipse>
+                    <ellipse cx="128" cy="26" rx="120" ry="18" stroke="currentColor" stroke-width="1" transform="rotate(1 130 25)"></ellipse>
+                  </svg>
+                </span>
+              </h2>
+            </div>
+
+            <p class="font-label-lg text-label-lg text-on-surface font-semibold mt-space-sm underline decoration-outline-variant decoration-2">
+              Write to me
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-space-xs">
+              Jangan tunggu cafe sebelah lebih dulu. Konsultasikan kebutuhan website cafe &amp; eatery Anda sekarang bersama Mas Fardhan, gratis dan tanpa komitmen.
+            </p>
+
+            <!-- Consultation Input Bar -->
+            <form class="w-full max-w-2xl mt-space-xl flex flex-col sm:flex-row items-center gap-space-xs bg-surface-container-lowest p-space-xs rounded-2xl sm:rounded-full shadow-lg border border-outline-variant/30" id="contact-form">
+              <div class="flex items-center flex-1 w-full px-space-md py-space-xs">
+                <span class="material-symbols-outlined text-outline-variant mr-space-xs">edit_note</span>
+                <input class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-outline-variant" id="user-message" placeholder="Tulis nama cafe/eatery atau kebutuhan Anda..." required="" type="text" autocomplete="off"/>
+              </div>
+              <button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-[#121316] hover:bg-black text-white font-label-lg text-label-lg px-space-xl py-space-sm rounded-full transition-transform hover:scale-105 shadow-md active:scale-95" type="submit" id="contact-submit-btn">
+                <span>Get a quote</span>
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+            </form>
+
+            <!-- Response Speed Reassurance -->
+            <div class="mt-space-md inline-flex items-center gap-2 px-space-md py-1 rounded-full bg-tertiary-fixed-dim/30 text-on-surface font-label-md text-label-md">
+              <span class="material-symbols-outlined text-tertiary-container text-[18px]">bolt</span>
+              <span>admin akan balas secepatnya</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20">
+    <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start">
+        
+        <!-- Left: Brand info -->
+        <div class="md:col-span-5 flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-xs">
+            <img src="assets/images/logo.png" alt="F.Site Logo" class="w-8 h-8 rounded-lg object-contain shadow-sm"/>
+            <span class="font-headline-md text-headline-md text-on-surface font-bold">F.Site<span class="text-primary">.</span></span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+            Freelance Web Designer &amp; Cafe/Eatery Specialist. Membantu cafe, coffee shop, dan brand kuliner membangun website berkonversi tinggi dengan visual modern ala agency.
+          </p>
+          <div class="pt-space-xs">
+            <a class="inline-flex items-center gap-space-xs bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg px-space-md py-space-sm rounded-full transition-all duration-200 shadow-sm hover:scale-105" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20mau%20konsultasi%20pembuatan%20website%20cafe%20dan%20eatery" rel="noopener noreferrer" target="_blank" id="footer-wa-btn">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              <span>WhatsApp: 0895-2338-0635</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Nav Links -->
+        <div class="md:col-span-3 flex flex-col gap-space-xs">
+          <h4 class="font-label-lg text-label-lg text-on-surface font-bold">Navigasi Cepat</h4>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li class="py-0.5"><a class="hover:text-primary transition-colors" href="#tentang">Tentang Fardhan</a></li>
+            <li class="py-0.5"><a class="hover:text-primary transition-colors" href="#kelebihan">Kelebihan Layanan</a></li>
+            <li class="py-0.5"><a class="hover:text-primary transition-colors" href="#harga">Paket &amp; Harga</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Availability Card -->
+        <div class="md:col-span-4 flex flex-col gap-space-xs">
+          <h4 class="font-label-lg text-label-lg text-on-surface font-bold">Jadwalkan Diskusi</h4>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Punya project website cafe baru, redesign menu digital QR, atau branding eatery? Mari diskusikan kebutuhan tempat Anda.
+          </p>
+          <div class="mt-space-xs p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="font-label-md text-label-md text-on-surface font-semibold">Status Ketersediaan</span>
+              <span class="font-body-sm text-body-sm text-tertiary-container flex items-center gap-1 font-semibold">
+                <span class="w-2 h-2 rounded-full bg-tertiary-container inline-block animate-pulse"></span>
+                Menerima Project Baru
+              </span>
+            </div>
+            <a class="w-10 h-10 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-transform hover:scale-105 shadow-sm" href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20ingin%20jadwalkan%20diskusi%20pembuatan%20website%20cafe" rel="noopener noreferrer" target="_blank" aria-label="Kirim Pesan WhatsApp">
+              <span class="material-symbols-outlined text-[20px]">send</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTION BUTTONS: WhatsApp & Back to Top -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-none">
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Kembali ke atas" class="pointer-events-auto w-11 h-11 rounded-full bg-surface-container-high hover:bg-primary hover:text-white text-on-surface flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 translate-y-4">
+      <span class="material-symbols-outlined text-[22px]">keyboard_arrow_up</span>
+    </button>
+
+    <!-- Floating WhatsApp Quick Button with Official Logo -->
+    <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20tertarik%20konsultasi%20website%20cafe%20dan%20eatery" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Mas Fardhan" id="floating-wa-btn" class="pointer-events-auto relative flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-[0_10px_25px_-5px_rgba(37,211,102,0.45)] hover:shadow-[0_16px_32px_-5px_rgba(37,211,102,0.65)] transition-all duration-300 hover:scale-110 active:scale-95 group border border-outline-variant/30">
+      <!-- Animated Status Indicator Pulse -->
+      <span class="absolute top-0.5 right-0.5 w-3.5 h-3.5 bg-[#25D366] rounded-full border-2 border-white z-10"></span>
+      <span class="absolute top-0.5 right-0.5 w-3.5 h-3.5 bg-[#25D366] rounded-full animate-ping opacity-75"></span>
+
+      <!-- WhatsApp Logo Image -->
+      <img src="assets/images/whatsapp.png" alt="WhatsApp" class="w-9 h-9 object-contain group-hover:rotate-6 transition-transform duration-300"/>
+
+      <!-- Tooltip on Hover -->
+      <span class="absolute right-full mr-3.5 bg-[#121316] text-white font-label-md text-label-md px-3.5 py-1.5 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap pointer-events-none translate-x-2 group-hover:translate-x-0">
+        Chat Mas Fardhan
+      </span>
+    </a>
+
+  </div>
+
+
+  <!-- TOAST FEEDBACK NOTIFICATION -->
+  <div id="toast-notification" class="fixed top-24 right-6 z-50 bg-[#121316] text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 opacity-0 translate-y-[-20px] pointer-events-none">
+    <span class="material-symbols-outlined text-[#22C55E] text-[22px]">check_circle</span>
+    <span id="toast-message" class="font-label-md text-label-md">Pesan berhasil dikirim!</span>
+  </div>
+
+  <!-- MAIN FUNCTIONAL JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const WA_PHONE = '6289523380635';
+
+      // 1. Toast Notification Helper
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-message');
+      let toastTimer = null;
+
+      function showToast(message, duration = 3000) {
+        if (!toast || !toastMsg) return;
+        toastMsg.textContent = message;
+        toast.classList.remove('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-[-20px]', 'pointer-events-none');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, duration);
+      }
+
+      // 2. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            if (mobileMenuIcon) mobileMenuIcon.textContent = 'close';
+          } else {
+            mobileMenu.classList.add('hidden');
+            if (mobileMenuIcon) mobileMenuIcon.textContent = 'menu';
+          }
+        });
+
+        // Close mobile menu on clicking any link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            if (mobileMenuIcon) mobileMenuIcon.textContent = 'menu';
+          });
+        });
+      }
+
+      // 3. Smooth Scrolling for all in-page links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || targetId === '') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+          }
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const headerHeight = 80;
+            const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({
+              top: targetPos,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // 4. Active Navigation Highlight based on scroll position
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function highlightNavOnScroll() {
+        const scrollY = window.pageYOffset;
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 120;
+          const sectionId = current.getAttribute('id');
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              if (link.getAttribute('data-section') === sectionId) {
+                link.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+                link.classList.remove('text-on-surface-variant');
+              } else {
+                link.classList.remove('bg-surface-container-high', 'font-semibold');
+                link.classList.add('text-on-surface-variant');
+              }
+            });
+          }
+        });
+      }
+      window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
+
+      // 5. Back to Top Button visibility & click
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 400) {
+            backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+          } else {
+            backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+          }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 6. Contact Form Submission to WhatsApp
+      const contactForm = document.getElementById('contact-form');
+      const userMessage = document.getElementById('user-message');
+
+      if (contactForm && userMessage) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const rawText = userMessage.value.trim();
+          if (!rawText) return;
+
+          showToast('Membuka WhatsApp Mas Fardhan...');
+          const query = encodeURIComponent(`Halo Mas Fardhan, ${rawText}`);
+          const waUrl = `https://wa.me/${WA_PHONE}?text=${query}`;
+          
+          setTimeout(() => {
+            window.open(waUrl, '_blank');
+          }, 350);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

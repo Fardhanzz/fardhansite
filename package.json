@@ -1,0 +1,26 @@
+{
+  "name": "fardhansite",
+  "version": "1.0.0",
+  "description": "FardhanSite - Freelance Cafe and Eatery Website Specialist",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "fardhan",
+    "fardhansite",
+    "cafe",
+    "eatery",
+    "resto",
+    "coffee-shop",
+    "google-antigravity",
+    "google-stitch",
+    "n8n",
+    "claude",
+    "gemini"
+  ],
+  "author": "Fardhan",
+  "license": "MIT"
+}
