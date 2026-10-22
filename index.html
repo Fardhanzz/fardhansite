@@ -2211,6 +2211,334 @@
         animation: none;
       }
     }
+    /* ==========================================================================
+       PORTFOLIO SECTION & CARD BULLETPROOF STYLES
+       ========================================================================== */
+    #portofolio {
+      scroll-margin-top: 100px;
+    }
+
+    .portfolio-filters-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .portfolio-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background-color: #efedf1;
+      color: #474555;
+    }
+
+    .portfolio-filter-btn:hover {
+      background-color: #e9e7ec;
+      color: #1b1b1f;
+    }
+
+    .portfolio-filter-btn.active {
+      background-color: #3f21cc;
+      color: #ffffff;
+      box-shadow: 0 4px 12px -2px rgba(63, 33, 204, 0.35);
+    }
+
+    .portfolio-card {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      border-radius: 1rem;
+      border: 1px solid rgba(200, 196, 216, 0.4);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.12);
+      border-color: rgba(88, 67, 228, 0.4);
+    }
+
+    .portfolio-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background-color: #efedf1;
+      flex-shrink: 0;
+    }
+
+    .portfolio-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-card:hover .portfolio-thumb-wrap img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-badge-bar {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .portfolio-badge-cat {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(250, 249, 253, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #1b1b1f;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 700;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      letter-spacing: 0.01em;
+    }
+
+    .portfolio-badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      letter-spacing: 0.01em;
+    }
+
+    .portfolio-badge-concept {
+      background-color: rgba(253, 203, 74, 0.95);
+      color: #715600;
+    }
+
+    .portfolio-badge-demo {
+      background-color: rgba(228, 223, 255, 0.95);
+      color: #3f21cc;
+    }
+
+    .portfolio-badge-client {
+      background-color: rgba(107, 255, 143, 0.95);
+      color: #005523;
+    }
+
+    .portfolio-card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      background-color: #ffffff;
+    }
+
+    .portfolio-card-body h3 {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 19px;
+      line-height: 26px;
+      font-weight: 700;
+      color: #1b1b1f;
+      margin: 0;
+      letter-spacing: -0.015em;
+    }
+
+    .portfolio-card-body p {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 22px;
+      color: #474555;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    .portfolio-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0 0;
+      padding-top: 12px;
+      border-top: 1px solid rgba(200, 196, 216, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .portfolio-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13px;
+      line-height: 18px;
+      color: #474555;
+      font-weight: 500;
+    }
+
+    .portfolio-card-footer {
+      padding-top: 1rem;
+      margin-top: 1.25rem;
+      border-top: 1px solid rgba(200, 196, 216, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .btn-open-detail {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      background-color: #3f21cc;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-open-detail:hover {
+      background-color: #5843e4;
+      transform: translateY(-1px);
+    }
+
+    .portfolio-btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 700;
+      color: #3f21cc;
+      background-color: rgba(63, 33, 204, 0.08);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .portfolio-btn-demo:hover {
+      background-color: #3f21cc;
+      color: #ffffff;
+    }
+
+    .portfolio-modal-thumb {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: #efedf1;
+      border: 1px solid rgba(200, 196, 216, 0.35);
+      margin: 1.5rem 0;
+    }
+
+    .portfolio-modal-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-modal-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 800;
+      color: #1b1b1f;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .portfolio-modal-summary {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 24px;
+      color: #474555;
+      margin-top: 8px;
+    }
+
+    .portfolio-modal-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 700;
+      background-color: #efedf1;
+      color: #3f21cc;
+    }
+
+    .portfolio-modal-section-title {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #787587;
+      margin-bottom: 6px;
+    }
+
+    .portfolio-modal-body-text {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 22px;
+      color: #1b1b1f;
+      margin: 0;
+    }
+
+    .portfolio-tech-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      border: 1px solid rgba(200, 196, 216, 0.5);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #474555;
+    }
   </style>
 </head>
 
@@ -2338,6 +2666,8 @@
         <a class="nav-link px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200"
           data-section="kelebihan" href="#kelebihan">Kelebihan</a>
         <a class="nav-link px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200"
+          data-section="portofolio" href="#portofolio">Portofolio</a>
+        <a class="nav-link px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200"
           data-section="harga" href="#harga">Harga</a>
       </nav>
 
@@ -2378,6 +2708,8 @@
           href="#tentang">Tentang</a>
         <a class="mobile-nav-link px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"
           href="#kelebihan">Kelebihan</a>
+        <a class="mobile-nav-link px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"
+          href="#portofolio">Portofolio</a>
         <a class="mobile-nav-link px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"
           href="#harga">Harga</a>
         <div class="pt-space-sm border-t border-outline-variant/20 mt-space-xs">
@@ -2909,6 +3241,47 @@
         </div>
       </section>
 
+      <!-- PORTOFOLIO / SHOWCASE KARYA -->
+      <section class="w-full bg-surface-container-lowest py-space-section relative cv-auto" id="portofolio">
+        <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+          <!-- Section Heading -->
+          <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Portofolio Terpilih</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight mt-space-xs">Showcase Karya Website</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-space-sm">
+              Jelajahi contoh implementasi website kafe &amp; restoran dengan desain bersih, katalog menu interaktif, dan alur pemesanan cepat.
+            </p>
+          </div>
+
+          <!-- Dynamic Projects Grid (Populated via assets/portfolio.js) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop" id="portfolio-grid" aria-live="polite">
+            <!-- Cards rendered dynamically from portfolio-data.js -->
+          </div>
+
+          <!-- Bottom Micro-CTA Card -->
+          <div class="mt-space-2xl bg-surface-container-low border border-outline-variant/30 rounded-2xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-md text-left">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <svg class="svg-icon svg-icon-26" aria-hidden="true">
+                  <use href="#icon-storefront"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Punya Konsep Sendiri untuk Kafe atau Resto Anda?</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Diskusikan kebutuhan tata letak, menu QR, atau integrasi reservasi yang pas dengan brand kuliner Anda.</p>
+              </div>
+            </div>
+            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20punya%20konsep%20kafe/restoran%20dan%20ingin%20konsultasi%20website" 
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-all duration-200 shadow-md hover:-translate-y-0.5 shrink-0">
+              <span>Konsultasi Konsep Anda</span>
+              <svg class="svg-icon svg-icon-18" aria-hidden="true">
+                <use href="#icon-arrow_outward"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- PAKET HARGA -->
       <section class="w-full bg-surface-container-low py-space-section cv-auto" id="harga">
@@ -3556,6 +3929,35 @@
       }
     });
   </script>
+
+  <!-- ACCESSIBLE PORTFOLIO DETAIL MODAL -->
+  <div id="portfolio-modal" 
+       class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm" 
+       role="dialog" 
+       aria-modal="true" 
+       aria-labelledby="portfolio-modal-title" 
+       aria-hidden="true">
+    <div id="portfolio-modal-backdrop" class="absolute inset-0"></div>
+    <div id="portfolio-modal-content" 
+         class="modal-content relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface rounded-3xl p-6 sm:p-8 shadow-2xl border border-outline-variant/30 z-10">
+      <!-- Close Button -->
+      <button type="button" 
+              id="portfolio-modal-close" 
+              aria-label="Tutup Detail Proyek" 
+              class="absolute top-5 right-5 w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+        <svg class="svg-icon svg-icon-22" aria-hidden="true">
+          <use href="#icon-close"/>
+        </svg>
+      </button>
+
+      <!-- Modal Body (Injected dynamically by portfolio.js) -->
+      <div id="portfolio-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Portfolio Data & Engine Scripts -->
+  <script src="assets/portfolio-data.js"></script>
+  <script src="assets/portfolio.js"></script>
 
 </body>
 
