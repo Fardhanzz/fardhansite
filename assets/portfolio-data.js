@@ -54,29 +54,29 @@ window.PORTFOLIO_PROJECTS = [
     solution: "Merancang antarmuka bersih dengan palet warna natural, fitur kalkulator rasio air dan takaran seduh real-time, tata letak menu terstruktur, serta tombol navigasi cepat untuk mengunjungi roastery fisik."
   },
   {
-    id: "bistro-aroma",
-    slug: "bistro-aroma-eatery",
-    title: "Bistro Aroma Casual Dining",
-    category: "Casual Dining & Eatery",
-    summary: "Konsep website restoran kasual dengan penyajian hidangan chef recommendations, sistem menu QR digital, dan alur booking meja.",
-    projectType: "concept",
-    thumbnail: "assets/images/showcase_cafe2.jpg",
+    id: "ruang-seduh",
+    slug: "ruang-seduh-coffee-house",
+    title: "Ruang Seduh Coffee House",
+    category: "Specialty Coffee & Roastery",
+    summary: "Website kedai kopi spesialti & roastery Bandung dengan kurasi single-origin Nusantara, katalog menu musiman, dan integrasi reservasi meja digital.",
+    projectType: "demo",
+    thumbnail: "assets/images/ruang-seduh.png",
     screenshots: [
-      "assets/images/showcase_cafe2.jpg"
+      "assets/images/ruang-seduh.png"
     ],
     features: [
-      "Katalog Menu Makanan Utama & Dessert",
-      "Desain Menu QR Siap Scan di Meja",
-      "Formulir Reservasi Meja ke WhatsApp",
-      "Optimasi Gambar & Loading Cepat"
+      "Katalog Kopi Single-Origin Nusantara",
+      "Menu Musiman & Tasting Notes",
+      "Sistem Alur Reservasi Meja Digital",
+      "Panduan Jam Buka & Lokasi Citarum"
     ],
-    liveUrl: "", // Isi dengan URL demo nyata jika sudah online
-    detailUrl: "#detail-bistro-aroma",
-    role: "Desain UI/UX & Frontend Development",
-    techStack: ["Google Stitch", "Vanilla JavaScript", "Tailwind CSS", "n8n Workflow"],
-    status: "Concept Project",
-    problemGoal: "Restoran modern menghadapi tantangan antrean reservasi akhir pekan dan kebutuhan menu digital yang higienis serta selalu up-to-date tanpa mencetak ulang buku menu fisik berkali-kali.",
-    solution: "Membangun tampilan menu visual dengan pembagian kategori jelas (Appetizer, Main Course, Drinks), alur reservasi terarah yang otomatis mengisi pesan WhatsApp terformat, serta arsitektur ringan yang hemat kuota pengunjung."
+    liveUrl: "https://demo-portfolio2-five.vercel.app/",
+    detailUrl: "#detail-ruang-seduh",
+    role: "Desain Antarmuka (UI/UX) & Implementasi Frontend Web Responsif",
+    techStack: ["Google Antigravity", "Tailwind CSS", "Playfair Display", "Vercel"],
+    status: "Live Demo",
+    problemGoal: "Kedai kopi spesialti di Citarum, Bandung membutuhkan website bernuansa hangat dan tenang yang mencerminkan filosofi seduh lambat, serta memudahkan reservasi meja dan eksplorasi profil kopi single-origin lokal.",
+    solution: "Menghadirkan tata letak bertema arsitektural hangat dengan tipografi editorial, daftar menu musiman bergradasi visual, kurasi daerah asal biji kopi, dan tombol reservasi meja instan."
   },
   {
     id: "selera-nusantara",
