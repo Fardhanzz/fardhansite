@@ -2425,16 +2425,18 @@
       font-size: 13px;
       line-height: 18px;
       font-weight: 700;
-      color: #ffffff;
+      color: #ffffff !important;
       background-color: #3f21cc;
       border: none;
       cursor: pointer;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       transition: background-color 0.2s ease, transform 0.2s ease;
+      text-decoration: none !important;
     }
 
     .btn-open-detail:hover {
       background-color: #5843e4;
+      color: #ffffff !important;
       transform: translateY(-1px);
     }
 
@@ -2450,6 +2452,7 @@
       font-weight: 700;
       color: #3f21cc;
       background-color: rgba(63, 33, 204, 0.08);
+      border: 1px solid rgba(63, 33, 204, 0.2);
       text-decoration: none;
       transition: all 0.2s ease;
     }
@@ -2457,6 +2460,9 @@
     .portfolio-btn-demo:hover {
       background-color: #3f21cc;
       color: #ffffff;
+      border-color: #3f21cc;
+      box-shadow: 0 4px 12px rgba(63, 33, 204, 0.25);
+      transform: translateY(-1px);
     }
 
     .portfolio-modal-thumb {

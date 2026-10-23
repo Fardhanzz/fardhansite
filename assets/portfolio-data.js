@@ -29,29 +29,29 @@
 
 window.PORTFOLIO_PROJECTS = [
   {
-    id: "kopi-senja",
-    slug: "kopi-senja-specialty",
-    title: "Kopi Senja Roastery & Cafe",
+    id: "pt-atelier",
+    slug: "pt-atelier-specialty-coffee",
+    title: "Pt. Atelier Specialty Coffee & Roastery",
     category: "Specialty Coffee & Roastery",
-    summary: "Konsep website coffee shop modern dengan etalase beans signature, menu minuman interaktif, dan panduan rute ke outlet fisik.",
-    projectType: "concept",
-    thumbnail: "assets/images/showcase_cafe1.jpg",
+    summary: "Website coffee roastery modern dengan kalkulator takaran seduh pour-over interaktif, katalog beans single origin, dan panduan kunjungan ke outlet fisik.",
+    projectType: "demo",
+    thumbnail: "assets/images/pt-atelier.png",
     screenshots: [
-      "assets/images/showcase_cafe1.jpg"
+      "assets/images/pt-atelier.png"
     ],
     features: [
-      "Katalog Biji Kopi & Tasting Notes",
-      "Menu Minuman & Pastry Interaktif",
-      "Integrasi Titik Lokasi & Jam Operasional",
-      "Pemesanan Cepat via Tombol WhatsApp"
+      "Kalkulator Kalibrasi Seduh (Pour Calibration)",
+      "Katalog Biji Kopi Single Origin & Tasting Notes",
+      "Navigasi Profil Roastery & Jam Operasional",
+      "Integrasi Menu Digital & Rute Kunjungan"
     ],
-    liveUrl: "", // Isi dengan URL demo nyata jika sudah online (contoh: https://kopisenja.vercel.app)
-    detailUrl: "#detail-kopi-senja",
-    role: "Desain Antarmuka (UI/UX) & Implementasi Frontend Web",
-    techStack: ["Google Antigravity", "Tailwind CSS", "Semantic HTML5", "WhatsApp API"],
-    status: "Concept Project",
-    problemGoal: "Kedai kopi specialty membutuhkan representasi visual online yang merefleksikan estetika hangat tempat mereka, sekaligus memudahkan pengunjung melihat varian beans dan jam operasional tanpa harus menelusuri feed media sosial yang panjang.",
-    solution: "Merancang antarmuka bernuansa hangat dengan tipografi modern, kartu tasting notes yang terstruktur, integrasi Google Maps, dan tombol WhatsApp instan untuk reservasi tempat sangrai & acara komunitas."
+    liveUrl: "https://demo-portfolio1-six.vercel.app/",
+    detailUrl: "#detail-pt-atelier",
+    role: "Desain Antarmuka (UI/UX) & Implementasi Frontend Web Responsif",
+    techStack: ["Google Antigravity", "Tailwind CSS", "Interactive JavaScript", "Vercel"],
+    status: "Live Demo",
+    problemGoal: "Kedai kopi specialty dan roastery membutuhkan representasi digital bernuansa editorial minimalis yang mencerminkan dedikasi seduh ('deliberate craft'), dilengkapi alat kalibrasi interaktif untuk pengunjung serta kurasi biji kopi musiman.",
+    solution: "Merancang antarmuka bersih dengan palet warna natural, fitur kalkulator rasio air dan takaran seduh real-time, tata letak menu terstruktur, serta tombol navigasi cepat untuk mengunjungi roastery fisik."
   },
   {
     id: "bistro-aroma",

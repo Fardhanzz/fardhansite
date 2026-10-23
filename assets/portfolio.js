@@ -127,25 +127,26 @@
           </li>
         `).join('');
 
-      // Tombol Demo (hanya tampil jika valid URL)
-      const demoBtnHtml = hasLiveUrl ? `
-        <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" 
-           class="portfolio-btn-demo"
-           title="Buka Demo Langsung: ${title}">
-          <span>Lihat Demo</span>
-          <svg class="svg-icon svg-icon-14" aria-hidden="true">
-            <use href="#icon-north_east"/>
-          </svg>
+      // URL tujuan untuk demo
+      const demoUrl = hasLiveUrl 
+        ? liveUrl 
+        : `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(`Halo Mas Fardhan, saya tertarik melihat demo website ${project.title}`)}`;
+
+      const thumbMediaHtml = `
+        <a href="${demoUrl}" target="_blank" rel="noopener noreferrer" 
+           class="block w-full h-full"
+           title="Buka Website Demo: ${title}">
+          <img src="${thumbnail}" alt="Preview Proyek ${title}" 
+               loading="lazy" decoding="async"
+               class="w-full h-full object-cover" />
         </a>
-      ` : '';
+      `;
 
       return `
         <article class="portfolio-card group" data-category="${escapeHtml(project.category)}" data-id="${id}">
           <!-- Thumbnail Container (Consistent Height & Overflow-Hidden) -->
           <div class="portfolio-thumb-wrap">
-            <img src="${thumbnail}" alt="Preview Proyek ${title}" 
-                 loading="lazy" decoding="async"
-                 class="w-full h-full object-cover" />
+            ${thumbMediaHtml}
             
             <!-- Badges Bar strictly overlayed on top of image -->
             <div class="portfolio-badge-bar">
@@ -174,20 +175,14 @@
 
             <!-- Card Actions Footer -->
             <div class="portfolio-card-footer">
-              <button type="button" 
-                      class="btn-open-detail"
-                      data-project-id="${id}"
-                      aria-haspopup="dialog"
-                      aria-controls="portfolio-modal">
-                <span>Lihat Detail</span>
+              <a href="${demoUrl}" target="_blank" rel="noopener noreferrer" 
+                 class="btn-open-detail"
+                 title="Buka Demo: ${title}">
+                <span>Lihat Demo</span>
                 <svg class="svg-icon svg-icon-14" aria-hidden="true">
                   <use href="#icon-arrow_forward"/>
                 </svg>
-              </button>
-
-              <div class="flex items-center gap-space-xs">
-                ${demoBtnHtml}
-              </div>
+              </a>
             </div>
           </div>
         </article>
@@ -195,14 +190,6 @@
     }).join('');
 
     gridEl.innerHTML = cardsHtml;
-
-    // Pasang listener pada tombol detail
-    gridEl.querySelectorAll('.btn-open-detail').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const projId = btn.getAttribute('data-project-id');
-        openProjectDetail(projId, btn);
-      });
-    });
   }
 
   /**
@@ -267,7 +254,7 @@
 
     const demoActionHtml = hasLiveUrl ? `
       <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" 
-         class="portfolio-btn-demo" style="padding: 10px 22px; font-size: 14px;">
+         class="btn-open-detail" style="padding: 10px 22px; font-size: 14px;">
         <span>Buka Website Demo</span>
         <svg class="svg-icon svg-icon-18" aria-hidden="true">
           <use href="#icon-north_east"/>
@@ -302,7 +289,15 @@
 
       <!-- Main Thumbnail Preview -->
       <div class="portfolio-modal-thumb">
-        <img src="${thumbnail}" alt="Tampilan Penuh Proyek ${title}" />
+        ${hasLiveUrl ? `
+          <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" 
+             class="block w-full h-full group/modalthumb" 
+             title="Buka Website Demo ${title}">
+            <img src="${thumbnail}" alt="Tampilan Penuh Proyek ${title}" class="w-full h-full object-cover transition-transform duration-300 group-hover/modalthumb:scale-105" />
+          </a>
+        ` : `
+          <img src="${thumbnail}" alt="Tampilan Penuh Proyek ${title}" class="w-full h-full object-cover" />
+        `}
       </div>
 
       <!-- Detail Grid: Features & Case Details -->
