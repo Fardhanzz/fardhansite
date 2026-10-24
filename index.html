@@ -2212,6 +2212,7 @@
         animation: none;
       }
     }
+
     /* ==========================================================================
        PORTFOLIO SECTION & CARD BULLETPROOF STYLES
        ========================================================================== */
@@ -3253,37 +3254,55 @@
         <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
           <!-- Section Heading -->
           <div class="text-center max-w-2xl mx-auto mb-space-2xl">
-            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Portofolio Terpilih</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight mt-space-xs">Showcase Karya Website</h2>
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Portofolio
+              Terpilih</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight mt-space-xs">
+              Showcase Karya Website</h2>
             <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-space-sm">
-              Jelajahi contoh implementasi website kafe &amp; restoran dengan desain bersih, katalog menu interaktif, dan alur pemesanan cepat.
+              Jelajahi contoh implementasi website kafe &amp; restoran dengan desain bersih, katalog menu interaktif,
+              dan alur pemesanan cepat.
             </p>
           </div>
 
           <!-- Dynamic Projects Grid (Populated via assets/portfolio.js) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop" id="portfolio-grid" aria-live="polite">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop" id="portfolio-grid"
+            aria-live="polite">
             <!-- Cards rendered dynamically from portfolio-data.js -->
           </div>
 
+          <!-- Disclaimer / Teks Peringatan Ilustrasi AI -->
+          <div class="mt-space-lg text-center">
+            <p
+              class="inline-flex items-center justify-center gap-2 text-xs text-on-surface-variant font-medium px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/30">
+              <svg class="svg-icon svg-icon-14 text-outline shrink-0" aria-hidden="true">
+                <use href="#icon-security" />
+              </svg>
+              <span>*Bisnis, tempat, visual, dan aset yang terdapat dalam website demo hanya ilustrasi yang direkayasa dengan AI.</span>
+            </p>
+          </div>
+
           <!-- Bottom Micro-CTA Card -->
-          <div class="mt-space-2xl bg-surface-container-low border border-outline-variant/30 rounded-2xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+          <div
+            class="mt-space-xl bg-surface-container-low border border-outline-variant/30 rounded-2xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
             <div class="flex items-center gap-space-md text-left">
               <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                 <svg class="svg-icon svg-icon-26" aria-hidden="true">
-                  <use href="#icon-storefront"/>
+                  <use href="#icon-storefront" />
                 </svg>
               </div>
               <div>
-                <h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Punya Konsep Sendiri untuk Kafe atau Resto Anda?</h4>
-                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Diskusikan kebutuhan tata letak, menu QR, atau integrasi reservasi yang pas dengan brand kuliner Anda.</p>
+                <h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Punya Konsep Sendiri untuk Kafe
+                  atau Resto Anda?</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Diskusikan kebutuhan tata letak,
+                  menu QR, atau integrasi reservasi yang pas dengan brand kuliner Anda.</p>
               </div>
             </div>
-            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20punya%20konsep%20kafe/restoran%20dan%20ingin%20konsultasi%20website" 
-               target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-all duration-200 shadow-md hover:-translate-y-0.5 shrink-0">
+            <a href="https://wa.me/6289523380635?text=Halo%20Mas%20Fardhan,%20saya%20punya%20konsep%20kafe/restoran%20dan%20ingin%20konsultasi%20website"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-all duration-200 shadow-md hover:-translate-y-0.5 shrink-0">
               <span>Konsultasi Konsep Anda</span>
               <svg class="svg-icon svg-icon-18" aria-hidden="true">
-                <use href="#icon-arrow_outward"/>
+                <use href="#icon-arrow_outward" />
               </svg>
             </a>
           </div>
@@ -3938,22 +3957,17 @@
   </script>
 
   <!-- ACCESSIBLE PORTFOLIO DETAIL MODAL -->
-  <div id="portfolio-modal" 
-       class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm" 
-       role="dialog" 
-       aria-modal="true" 
-       aria-labelledby="portfolio-modal-title" 
-       aria-hidden="true">
+  <div id="portfolio-modal"
+    class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm"
+    role="dialog" aria-modal="true" aria-labelledby="portfolio-modal-title" aria-hidden="true">
     <div id="portfolio-modal-backdrop" class="absolute inset-0"></div>
-    <div id="portfolio-modal-content" 
-         class="modal-content relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface rounded-3xl p-6 sm:p-8 shadow-2xl border border-outline-variant/30 z-10">
+    <div id="portfolio-modal-content"
+      class="modal-content relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-surface rounded-3xl p-6 sm:p-8 shadow-2xl border border-outline-variant/30 z-10">
       <!-- Close Button -->
-      <button type="button" 
-              id="portfolio-modal-close" 
-              aria-label="Tutup Detail Proyek" 
-              class="absolute top-5 right-5 w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+      <button type="button" id="portfolio-modal-close" aria-label="Tutup Detail Proyek"
+        class="absolute top-5 right-5 w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
         <svg class="svg-icon svg-icon-22" aria-hidden="true">
-          <use href="#icon-close"/>
+          <use href="#icon-close" />
         </svg>
       </button>
 
