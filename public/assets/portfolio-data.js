@@ -79,28 +79,28 @@ window.PORTFOLIO_PROJECTS = [
     solution: "Menghadirkan tata letak bertema arsitektural hangat dengan tipografi editorial, daftar menu musiman bergradasi visual, kurasi daerah asal biji kopi, dan tombol reservasi meja instan."
   },
   {
-    id: "selera-nusantara",
-    slug: "selera-nusantara-resto",
-    title: "Selera Nusantara Family Resto",
-    category: "Family Resto & Catering",
-    summary: "Konsep website restoran keluarga bernuansa tradisional-modern dengan paket hidangan katering, galeri suasana, dan kontak pemesanan cepat.",
-    projectType: "concept",
-    thumbnail: "assets/images/showcase_cafe3.jpg",
+    id: "senja-cafe",
+    slug: "senja-cafe-kitchen",
+    title: "SENJA Café & Kitchen",
+    category: "Artisanal Cafe & Kitchen",
+    summary: "Website kafe & kitchen di Jalan Riau Bandung dengan menu sourdough oven kayu bakar, kopi single-origin Priangan, dan panduan kunjungan sanctuary.",
+    projectType: "demo",
+    thumbnail: "assets/images/senja-cafe.png",
     screenshots: [
-      "assets/images/showcase_cafe3.jpg"
+      "assets/images/senja-cafe.png"
     ],
     features: [
-      "Pilihan Paket Katering Keluarga & Acara",
-      "Galeri Foto Suasana & Area VIP Resto",
-      "Daftar Menu Tradisional Unggulan",
-      "Konsultasi Acara Khusus via WhatsApp"
+      "Katalog Menu Hearth Bakery & Wild Sourdough",
+      "Kurasi Kopi Single-Origin Priangan Kalita",
+      "Agenda Komunitas & Kalender Gatherings",
+      "Galeri Visual Suasana & Panduan Lokasi Riau"
     ],
-    liveUrl: "", // Isi dengan URL demo nyata jika sudah online
-    detailUrl: "#detail-selera-nusantara",
-    role: "Frontend Developer & Layout Designer",
-    techStack: ["Google Antigravity", "HTML5 Semantik", "Modern CSS", "WhatsApp API"],
-    status: "Concept Project",
-    problemGoal: "Restoran keluarga membutuhkan wadah untuk menampilkan paket prasmanan, ruang VIP keluarga, dan kemudahan bagi pelanggan korporat maupun perorangan dalam memesan paket katering.",
-    solution: "Menghadirkan tata letak yang bersih dan terstruktur untuk paket-paket katering lengkap dengan detail porsi, galeri suasana tempat yang nyaman, serta call-to-action yang langsung menghubungkan klien ke admin pemesanan."
+    liveUrl: "https://demo-portfolio3.vercel.app/",
+    detailUrl: "#detail-senja-cafe",
+    role: "Desain Antarmuka (UI/UX) & Implementasi Frontend Web Responsif",
+    techStack: ["Google Antigravity", "Tailwind CSS", "Semantic HTML5", "Vercel"],
+    status: "Live Demo",
+    problemGoal: "Kafe dan kitchen bernuansa sanctuary di Jalan Riau Bandung membutuhkan website editorial berestetika hangat yang merefleksikan konsep slow living, artisan baking, dan kenyamanan berkumpul.",
+    solution: "Merancang tata letak bertema golden light dengan tipografi serif elegan, navigasi menu musiman terstruktur, galeri visual arsip suasana, serta informasi jam operasional dan lokasi yang lengkap."
   }
 ];
